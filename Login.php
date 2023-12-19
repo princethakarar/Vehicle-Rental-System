@@ -16,28 +16,26 @@
             <p class="register">Don't have account? <a href="register.php">Register</a></p>
         </form>
     </div>
-    <?php
-        if(isset($_POST["sb"]))
-        {
-            $db = mysqli_connect("localhost","root","","vrs");
+    <?php if (isset($_POST['sb'])) {
+        $db = mysqli_connect('localhost', 'root', '', 'vrs');
 
-            if($db)
-            {  
-                    $mail = $_POST['mail'];
-                    $pass = $_POST['pass'];
+        if ($db) {
+            $mail = $_POST['mail'];
+            $pass = $_POST['pass'];
 
-                    $query = "select * from user where email = '$mail' and pass = '$pass'";
+            $query = mysqli_query($db,"select * from user where email = '$mail' and pass = '$pass'");
 
-                    if(mysqli_query($db,$query))
-                        header("Location: home.php");
-                    else
-                        echo mysqli_error($db);
-            }
-            
-            else
+            $n = mysqli_num_rows($query);
+
+            if ($n == 1) {
+                header('Location: home.php');
+            } else {
                 echo mysqli_error($db);
-            mysqli_close($db);
-        }   
-    ?>
+            }
+        } else {
+            echo mysqli_error($db);
+        }
+        mysqli_close($db);
+    } ?>
 </body>
 </html>

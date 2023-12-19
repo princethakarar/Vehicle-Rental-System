@@ -32,7 +32,10 @@
                     $query = "insert into user(name, email, pass) values('$name','$mail','$pass')";
 
                     if(mysqli_query($db,$query))
+                    {
+                        header('Location: login.php');  
                         echo "<script>alert('You have Registered successfully...');</script>";
+                    }
                     else
                         echo mysqli_error($db);
             }
