@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login&register.css">
 </head>
 <body>
     <div class="container">
-        <form action="get">
+        <form action="post">
         <h2 class="heading">Login</h2>
             <input type="text" placeholder="Enter Email" name="mail">
             <input type="password" placeholder="Enter Password" name="pass">

@@ -22,7 +22,7 @@ form{
     position: relative;
     padding: 20px;
     border-radius: 10px;
-    top: 30vh;
+    top: 20vh;
     width: 270px;
 }
 
@@ -47,13 +47,9 @@ input{
 .heading{
     text-align: center;
     margin-bottom: 30px;
+    text-decoration: underline;
 }
 
 .register{
     text-align: center;
 }
-
-.register a{
-    text-decoration: none;
-}
-
