@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="post">
+        <form method="post">
         <h2 class="heading">Register</h2>
             <input type="text" placeholder="Enter Name" name="name">
             <input type="text" placeholder="Enter Email" name="mail">
@@ -18,28 +18,29 @@
         </form>
     </div>
     <?php
-        $db = mysqli_connect("localhost","root","","vrs")
-
-        if($db)
+        if(isset($_POST["sb"]))
         {
-            if(isset($_POST["sb"]))
+            $db = mysqli_connect("localhost","root","","vrs");
+
+            if($db)
             {
-                $name = $_POST['name'];
-                $mail = $_POST['mail'];
-                $pass = $_POST['pass'];
+                
+                    $name = $_POST['name'];
+                    $mail = $_POST['mail'];
+                    $pass = $_POST['pass'];
 
-                $query = "insert into user values('$name','$mail','$pass');
+                    $query = "insert into user(name, email, pass) values('$name','$mail','$pass')";
 
-                if(mysqli_query($db,$query))
-                    echo "<script>alert('You have Registered successfully...');</script>";
-                else
-                    echo mysqli_error($db);
+                    if(mysqli_query($db,$query))
+                        echo "<script>alert('You have Registered successfully...');</script>";
+                    else
+                        echo mysqli_error($db);
             }
-        }
-        else
-        {
-            echo mysqli_error($db);
-        }
+            
+            else
+                echo mysqli_error($db);
+            mysqli_close($db);
+        }   
     ?>
 </body>
 </html>

@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="post">
+        <form method="post">
         <h2 class="heading">Login</h2>
             <input type="text" placeholder="Enter Email" name="mail">
             <input type="password" placeholder="Enter Password" name="pass">
@@ -16,5 +16,28 @@
             <p class="register">Don't have account? <a href="register.php">Register</a></p>
         </form>
     </div>
+    <?php
+        if(isset($_POST["sb"]))
+        {
+            $db = mysqli_connect("localhost","root","","vrs");
+
+            if($db)
+            {  
+                    $mail = $_POST['mail'];
+                    $pass = $_POST['pass'];
+
+                    $query = "select * from user where email = '$mail' and pass = '$pass'";
+
+                    if(mysqli_query($db,$query))
+                        header("Location: home.php");
+                    else
+                        echo mysqli_error($db);
+            }
+            
+            else
+                echo mysqli_error($db);
+            mysqli_close($db);
+        }   
+    ?>
 </body>
 </html>
