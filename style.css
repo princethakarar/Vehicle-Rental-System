@@ -112,7 +112,7 @@ header {
   position: relative;
   background: url(images/car.jpg);
   background-repeat: no-repeat;
-  background-position: 650px 50px;
+  background-position: 650px 8px;
   background-size: contain;
   display: grid;
   align-items: center;
@@ -138,11 +138,12 @@ header {
   flex-wrap: wrap;
   gap: 1rem;
   position: absolute;
-  bottom: 4rem;
-  left: 100px;
+  bottom: 3rem;
+  left: 80px;
   background: #fff;
   padding: 20px;
   border-radius: 0.5rem;
+  /* border: 1px solid var(--main-color); */
 }
 
 .input-box {
@@ -245,7 +246,7 @@ header {
 
 .services-container .box .box-image img {
   width: 100%;
-  height: 100;
+  height: 100%;
   border-radius: 1rem;
   object-fit: cover;
   object-position: center;
@@ -339,7 +340,7 @@ header {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center;
+  object-position: 1px 0;
   border: 2px solid var(--second-color);
 }
 
