@@ -28,7 +28,7 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: var(--main-color);
+  background: var(--third-color);
   border-radius: 5rem;
 }
 
@@ -103,6 +103,7 @@ header {
   background: var(--third-color);
   color: #fff;
   border-radius: 0.5rem;
+  transition: 0.5s ease;
 }
 
 .header-btn .sign-in:hover {
@@ -136,7 +137,8 @@ header {
   height: 350px;
   width: 700px;
   padding-right: 70px;
-  padding-bottom: 10px;
+  /* padding-bottom: 20px; */
+  margin-bottom: 20px;
 }
 
 .text h1 {
@@ -194,6 +196,7 @@ header {
   color: #fff;
   font-size: 1rem;
   font-weight: 500;
+  transition: 0.5s ease;
 }
 
 .form-container form .btn:hover {
@@ -234,6 +237,7 @@ header {
   background: #eeeff1;
   border-radius: 0.5rem;
   color: var(--main-color);
+  transition: 0.5s ease;
 }
 
 .ride-container .box .bx:hover,
@@ -308,6 +312,7 @@ header {
   color: #fff;
   padding: 10px;
   border-radius: 0.5rem;
+  transition: 0.5s ease;
 }
 
 .services-container .box .btn:hover {
@@ -343,6 +348,7 @@ header {
   background: var(--third-color);
   color: #fff;
   border-radius: 0.5rem;
+  transition: 0.5s ease;
 }
 
 .about-text .btn:hover {
@@ -647,6 +653,7 @@ header {
     border-left: 2px solid var(--main-color);
     margin: 1rem;
     display: block;
+    transition: 0.5s ease;
   }
 
   .navbar a:hover{
