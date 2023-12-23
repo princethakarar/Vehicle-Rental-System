@@ -3,6 +3,7 @@
         "url":"",
         "name":"Alto 800",
         "brand":"Maruti Suzuki",
+        "path":"images/cars/nexon-dark.png",
         "color":"Red",
         "safe":"false",
         "fuel":"CNG"
