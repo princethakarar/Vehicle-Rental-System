@@ -21,14 +21,16 @@ const sr = ScrollReveal ({
 sr.reveal('.text',{delay:50,origin:'top'})
 sr.reveal('.car img',{delay:50,origin:'bottom'})
 sr.reveal('.form-container form',{delay:50,origin:'left'})
-sr.reveal('.heading',{delay:50,origin:'top'})
-sr.reveal('.faq-container .box',{delay:50,origin:'top'})
-sr.reveal('.cars-container .box',{delay:50,origin:'top'})
-sr.reveal('.cars-container .categories',{delay:50,origin:'top'})
-sr.reveal('.about-container .about-image',{delay:50,origin:'top'})
-sr.reveal('.about-container .about-text',{delay:50,origin:'top'})
-sr.reveal('.reviews-container .box',{delay:50,origin:'top'})
-sr.reveal('.newsletter .box',{delay:50,origin:'bottom'})
+// sr.reveal('.heading',{delay:50,origin:'top'})
+// sr.reveal('.heading1',{delay:100,origin:'top'})
+// sr.reveal('.heading2',{delay:200,origin:'top'})
+// sr.reveal('.about-container .about-image',{delay:500,origin:'top'})
+// sr.reveal('.about-container .about-text',{delay:500,origin:'top'})
+// sr.reveal('.heading3',{delay:300,origin:'top'})
+// sr.reveal('.reviews-container .box',{delay:300,origin:'top'})
+// sr.reveal('.heading4',{delay:400,origin:'top'})
+// sr.reveal('.faq-container .box',{delay:400,origin:'top'})
+// sr.reveal('.newsletter .box',{delay:500,origin:'bottom'})
 
 // fetch particular data from database
 
@@ -52,9 +54,8 @@ window.onload = function() {
                             <img src='${item.path}' alt="">
                         </div>
                         <div class="right">
-                            <p class="model">${item.model}</p>
-                            <h3 class="name">${item.name}</h3>
-                            <h2 class="price">&#8377;${item.price}<span>/Month</span></h2>
+                        <h3 class="name">${item.brand} ${item.name}</h3>
+                        <h2 class="price">&#8377;${item.price}<span>/Day</span></h2>
                             <a href="#" class="btn">Rent Now</a>
                         </div>
                     </div>
@@ -97,7 +98,7 @@ brand.addEventListener("change", function() {
                         <div class="right">
                             <p class="model">${item.model}</p>
                             <h3 class="name">${item.brand} ${item.name}</h3>
-                            <h2 class="price">&#8377;${item.price}<span>/Month</span></h2>
+                            <h2 class="price">&#8377;${item.price}<span>/Day</span></h2>
                             <a href="#" class="btn">Rent Now</a>
                         </div>
                     </div>
