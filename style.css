@@ -11,12 +11,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.categories{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
 :root {
   --main-color: #fe5b3d;
   --second-color: #ffac38;
@@ -40,6 +34,10 @@ html::-webkit-scrollbar-thumb {
 
 section {
   padding: 50px 100px;
+}
+
+.hide{
+  display: none;
 }
 
 /* main page */
@@ -140,8 +138,8 @@ header {
 }
 
 .home .car img{
-  height: 350px;
-  width: 700px;
+  height: 406px;
+  width: 614px;
   padding-right: 70px;
   /* padding-bottom: 20px; */
   margin-bottom: 20px;
@@ -258,11 +256,17 @@ header {
   margin: 1.4rem 0 0.5rem;
 }
 
-/* service */
+/* cars */
+
+.categories{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
 .cars-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-top: 2rem;
 }

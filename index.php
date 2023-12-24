@@ -70,12 +70,9 @@
                     <option value="Hyundai">Hyundai</option>
                 </select>
             </div>
-            <h2 class="head">Brand</h2>  
-            <div class="cars-container">
-                
-            </div>
+            <h2 class="head"></h2>  
         </div>
-
+        <div class="cars-container">
             <!-- <div class="box">
                 <div class="box-image">
                     <img src="images/cars/car1.jpg">
@@ -84,16 +81,7 @@
                 <h3>2018 Honda Civic</h3>
                 <h2>&#8377;5000 | &#8377;500 <span>/Month</span> </h2>
                 <a href="#" class="btn">Rent Now</a>
-            </div> -->
-                <!-- <div class="box">
-                <div class="box-image">
-                    <img src="images/cars/car1.jpg">
-                </div>
-                <p>2017</p>
-                <h3>2018 Honda Civic</h3>
-                <h2>&#8377;5000 | &#8377;500 <span>/Month</span> </h2>
-                <a href="#" class="btn">Rent Now</a>
-            </div>
+            </div>  
             <div class="box">
                 <div class="box-image">
                     <img src="images/cars/car1.jpg">
@@ -102,45 +90,9 @@
                 <h3>2018 Honda Civic</h3>
                 <h2>&#8377;5000 | &#8377;500 <span>/Month</span> </h2>
                 <a href="#" class="btn">Rent Now</a>
-            </div>
-            <div class="box">
-                <div class="box-image">
-                    <img src="images/cars/car1.jpg">
-                </div>
-                <p>2017</p>
-                <h3>2018 Honda Civic</h3>
-                <h2>&#8377;5000 | &#8377;500 <span>/Month</span> </h2>
-                <a href="#" class="btn">Rent Now</a>
-            </div>
-            <div class="box">
-                <div class="box-image">
-                    <img src="images/cars/car1.jpg">
-                </div>
-                <p>2017</p>
-                <h3>2018 Honda Civic</h3>
-                <h2>&#8377;5000 | &#8377;500 <span>/Month</span> </h2>
-                <a href="#" class="btn">Rent Now</a>
-            </div>
-            <div class="box">
-                <div class="box-image">
-                    <img src="images/cars/car1.jpg">
-                </div>
-                <p>2017</p>
-                <h3>2018 Honda Civic</h3>
-                <h2>&#8377;5000 | &#8377;500 <span>/Month</span> </h2>
-                <a href="#" class="btn">Rent Now</a>
-            </div>
-            <div class="box">
-                <div class="box-image">
-                    <img src="images/cars/car1.jpg">
-                </div>
-                <p>2017</p>
-                <h3>2018 Honda Civic</h3>
-                <h2>&#8377;5000 | &#8377;500 <span>/Month</span> </h2>
-                <a href="#" class="btn">Rent Now</a>
-            </div> -->
-
-    </section>
+            </div>  -->
+        </div>
+    </section>  
 
     <!-- about -->
 

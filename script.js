@@ -20,14 +20,15 @@ const sr = ScrollReveal ({
 
 sr.reveal('.text',{delay:50,origin:'top'})
 sr.reveal('.car img',{delay:50,origin:'bottom'})
-sr.reveal('.form-container form',{delay:200,origin:'left'})
+sr.reveal('.form-container form',{delay:50,origin:'left'})
 sr.reveal('.heading',{delay:50,origin:'top'})
-sr.reveal('.faq-container .box',{delay:150,origin:'top'})
-sr.reveal('.cars-container .box',{delay:150,origin:'top'})
-sr.reveal('.about-container .about-image',{delay:150,origin:'top'})
-sr.reveal('.about-container .about-text',{delay:150,origin:'top'})
-sr.reveal('.reviews-container .box',{delay:150,origin:'top'})
-sr.reveal('.newsletter .box',{delay:100,origin:'bottom'})
+sr.reveal('.faq-container .box',{delay:50,origin:'top'})
+sr.reveal('.cars-container .box',{delay:50,origin:'top'})
+sr.reveal('.cars-container .categories',{delay:50,origin:'top'})
+sr.reveal('.about-container .about-image',{delay:50,origin:'top'})
+sr.reveal('.about-container .about-text',{delay:50,origin:'top'})
+sr.reveal('.reviews-container .box',{delay:50,origin:'top'})
+sr.reveal('.newsletter .box',{delay:50,origin:'bottom'})
 
 // fetch particular data from database
 
@@ -37,6 +38,7 @@ let container = document.querySelector(".cars-container");
 
 window.onload = function() {
     let http = new XMLHttpRequest();
+    heading.classList.add("hide");
     http.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             let response = JSON.parse(this.responseText);
@@ -68,7 +70,14 @@ window.onload = function() {
 
 brand.addEventListener("change", function() {
     let brandName = this.value;
+
+    heading.classList.remove("hide");
     heading.innerHTML = this[this.selectedIndex].text;
+
+    if(heading.innerText === "All Brands")
+    {
+        heading.classList.add("hide");
+    }
 
     let http = new XMLHttpRequest();
 
@@ -87,7 +96,7 @@ brand.addEventListener("change", function() {
                         </div>
                         <div class="right">
                             <p class="model">${item.model}</p>
-                            <h3 class="name">${item.name}</h3>
+                            <h3 class="name">${item.brand} ${item.name}</h3>
                             <h2 class="price">&#8377;${item.price}<span>/Month</span></h2>
                             <a href="#" class="btn">Rent Now</a>
                         </div>
