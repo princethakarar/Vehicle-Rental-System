@@ -11,6 +11,12 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.categories{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 :root {
   --main-color: #fe5b3d;
   --second-color: #ffac38;

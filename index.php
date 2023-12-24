@@ -1,3 +1,5 @@
+<?php include "functions.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,8 +64,45 @@
         <nav>
             <li></li>
         </nav>
-        <div class="cars-container">
+        <div class="categories">
+            <div class="select">
+                <select name="brand" id="brand">
+                    <option value="">All Brands</option>
+                    <option value="Maruti Suzuki">Maruti Suzuki</option>
+                    <option value="Tata">Tata</option>
+                    <option value="Hyundai">Hyundai</option>
+                </select>
+            </div>
+            <div class="cars-container">
+                <?php
+                    $car_details = getAllCars();
+                    foreach($car_details as $detail)
+                    {
+                        ?>
+                            <div class="box">
+                                <div class="box-image">
+                                    <img src="<?php echo $detail['path'] ?>" alt="">
+                                </div>
+                                <div class="right">
+                                    <p class="model"><?php echo $detail['model'] ?></p>
+                                    <h3 class="name"><?php echo $detail['brand']. " ". $detail['name'] ?></h3>
+                                    <h2 class="price">&#8377;<?php echo $detail['price'] ?><span>/Day</span></h2>
+                                    <a href="#" class="btn">Rent Now</a>
+                                </div>
+                            </div>
+                        <?php
+                    }
+                ?>
             <!-- <div class="box">
+                <div class="box-image">
+                    <img src="images/cars/car1.jpg">
+                </div>
+                <p>2017</p>
+                <h3>2018 Honda Civic</h3>
+                <h2>&#8377;5000 | &#8377;500 <span>/Month</span> </h2>
+                <a href="#" class="btn">Rent Now</a>
+            </div> -->
+                <!-- <div class="box">
                 <div class="box-image">
                     <img src="images/cars/car1.jpg">
                 </div>
@@ -117,7 +156,9 @@
                 <h2>&#8377;5000 | &#8377;500 <span>/Month</span> </h2>
                 <a href="#" class="btn">Rent Now</a>
             </div> -->
+            </div>
         </div>
+
     </section>
 
     <!-- about -->
