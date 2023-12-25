@@ -70,7 +70,13 @@
                     <option value="Hyundai">Hyundai</option>
                 </select>
             </div>
-            <h2 class="head"></h2>  
+            <h2 class="head"></h2>
+            <div id="buttons">
+                <button class="button active" value="all" onclick="filterProduct('all')">All</button>
+                <button class="button" value="hatchback" onclick="filterProduct('hatchback')">Hatchback</button>
+                <button class="button" value="sedan" onclick="filterProduct('sedan')">Sedan</button>
+                <button class="button" value="suv" onclick="filterProduct('suv')">MUVs/SUVs</button>
+            </div>  
         </div>
         <div class="cars-container">
             <!-- <div class="box">

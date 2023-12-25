@@ -260,8 +260,38 @@ header {
 
 .categories{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  margin-top: 50px;
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+}
+
+.categories #buttons button{
+  position: relative;
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 5px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.categories #buttons button::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background: var(--gradient);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: 0.25s;
+}
+
+.categories #buttons .active::after{
+  width: 100%;
 }
 
 .cars-container {

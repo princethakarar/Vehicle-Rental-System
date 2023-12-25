@@ -1,5 +1,6 @@
 let menu = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
+let buttons = document.querySelectorAll(".button");
 
 menu.addEventListener("click",() =>{
     menu.classList.toggle("bx-x");
@@ -13,24 +14,25 @@ document.addEventListener("scroll",() => {
 
 const sr = ScrollReveal ({
     distance: '60px',
-    duration: 2500,
+    duration: 5000,
     delay: 400,
-    reset: true
+    reset: false
 })
 
 sr.reveal('.text',{delay:50,origin:'top'})
 sr.reveal('.car img',{delay:50,origin:'bottom'})
 sr.reveal('.form-container form',{delay:50,origin:'left'})
-// sr.reveal('.heading',{delay:50,origin:'top'})
+sr.reveal('.heading',{delay:100,origin:'top'})
+// sr.reveal('.car-container .box',{delay:200,origin:'top'})
 // sr.reveal('.heading1',{delay:100,origin:'top'})
 // sr.reveal('.heading2',{delay:200,origin:'top'})
-// sr.reveal('.about-container .about-image',{delay:500,origin:'top'})
-// sr.reveal('.about-container .about-text',{delay:500,origin:'top'})
+sr.reveal('.about-container .about-image',{delay:300,origin:'top'})
+sr.reveal('.about-container .about-text',{delay:300,origin:'top'})
 // sr.reveal('.heading3',{delay:300,origin:'top'})
-// sr.reveal('.reviews-container .box',{delay:300,origin:'top'})
+sr.reveal('.reviews-container .box',{delay:400,origin:'top'})
 // sr.reveal('.heading4',{delay:400,origin:'top'})
-// sr.reveal('.faq-container .box',{delay:400,origin:'top'})
-// sr.reveal('.newsletter .box',{delay:500,origin:'bottom'})
+sr.reveal('.faq-container .box',{delay:500,origin:'top'})
+sr.reveal('.newsletter .box',{delay:600,origin:'bottom'})
 
 // fetch particular data from database
 
@@ -49,7 +51,7 @@ window.onload = function() {
             for(let item of response)
             {
                 out += `
-                    <div class="box">
+                    <div class="box ${item.category}">
                         <div class="box-image">
                             <img src='${item.path}' alt="">
                         </div>
@@ -75,6 +77,17 @@ brand.addEventListener("change", function() {
     heading.classList.remove("hide");
     heading.innerHTML = this[this.selectedIndex].text;
 
+    buttons.forEach((button) => {
+        if(button.value == "all")
+        {
+            button.classList.add("active");
+        }
+        else
+        {
+            button.classList.remove("active");
+        }
+    });
+
     if(heading.innerText === "All Brands")
     {
         heading.classList.add("hide");
@@ -91,7 +104,7 @@ brand.addEventListener("change", function() {
             for(let item of response)
             {
                 out += `
-                    <div class="box">
+                    <div class="box ${item.category}">
                         <div class="box-image">
                             <img src='${item.path}' alt="">
                         </div>
@@ -112,3 +125,39 @@ brand.addEventListener("change", function() {
     http.setRequestHeader("content-type", "application/x-www-form-urlencoded");
     http.send("brand=" + brandName);
 });
+
+// Category-Wise
+
+function filterProduct(value){
+
+    buttons.forEach((button) => {
+        if(button.value == value)
+        {
+            button.classList.add("active");
+        }
+        else
+        {
+            button.classList.remove("active");
+        }
+    });
+
+    let boxes = document.querySelectorAll(".cars-container .box");
+
+    boxes.forEach((box) =>{
+        if(value == "all")
+        {
+            box.classList.remove("hide");
+        }
+        else
+        {
+            if(box.classList.contains(value))
+            {
+                box.classList.remove("hide");
+            }
+            else
+            {
+                box.classList.add("hide");
+            }
+        }
+    });
+}
