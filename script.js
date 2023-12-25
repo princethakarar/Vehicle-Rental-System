@@ -66,7 +66,7 @@ window.onload = function() {
             container.innerHTML = out;
         }
     };
-    http.open('POST', "temp.php", true);
+    http.open('POST', "getdata.php", true);
     http.setRequestHeader("content-type", "application/x-www-form-urlencoded");
     http.send("brand="); 
 };
