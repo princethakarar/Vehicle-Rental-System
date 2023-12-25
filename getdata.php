@@ -11,7 +11,7 @@
         }
         else
         {
-            $car_details = getCarsByBrands($brand);
+            $car_details = getCarsByBrand($brand);
         }
         echo json_encode($car_details);
     }
