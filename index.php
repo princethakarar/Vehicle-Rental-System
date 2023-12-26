@@ -23,8 +23,8 @@
             <li><a href="#faq">FAQ</a></li>
         </ul>
         <div class="header-btn">
-            <a href="#" class="sign-up">Sign up</a>
-            <a href="#" class="sign-in">sign in</a>
+            <a href="register.php" class="sign-up">Sign up</a>
+            <a href="login.php" class="sign-in">sign in</a>
         </div>
     </header>
     <section class="home" id="home">

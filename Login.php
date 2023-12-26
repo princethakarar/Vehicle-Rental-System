@@ -23,12 +23,12 @@
             $mail = $_POST['mail'];
             $pass = $_POST['pass'];
 
-            $query = mysqli_query($db,"select * from user where email = '$mail' and pass = '$pass'");
+            $query = mysqli_query($db,"SELECT * FROM user WHERE email = '$mail' AND pass = '$pass'");
 
             $n = mysqli_num_rows($query);
 
             if ($n == 1) {
-                header('Location: home.php');
+                header('Location: index.php');
             } else {
                 echo mysqli_error($db);
             }
