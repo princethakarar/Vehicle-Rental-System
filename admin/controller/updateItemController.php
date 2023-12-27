@@ -12,19 +12,11 @@
     $price= $_POST['price'];
 
     if( isset($_FILES['newImage']) ){
-        
+
         $location="images/cars/";
-        $img = $_FILES['newImage']['name'];
-        $tmp = $_FILES['newImage']['tmp_name'];
-        $dir = '../images/cars/';
-        $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
-        $valid_extensions = array('jpeg', 'jpg', 'png', 'gif','webp');
-        $image =rand(1000,1000000).".".$ext;
-        $final_image=$location. $image;
-        if (in_array($ext, $valid_extensions)) {
-            $path = UPLOAD_PATH . $image;
-            move_uploaded_file($tmp, $dir.$image);
-        }
+        $nm = $_FILES['newImage']['name'];
+        $final_image=$location. $nm;
+
     }else{
         $final_image=$_POST['existingImage'];
     }
