@@ -25,20 +25,16 @@
         while ($row = $result->fetch_assoc()) { ?>
     <tr>
       <td><?= $count ?></td>
-      <td><img height='100px' src='../<?= $row['path'] ?>'></td>
-      <td><?=$row['brand'], $row['name']?></td>
+      <td><img height='100px' src='../<?= $row['path']?>'></td>
+      <td><?=$row['brand']. " ". $row['name']?></td>
       <td><?= $row['model'] ?></td>      
       <td><?= $row['category'] ?></td> 
       <td><?= $row['color'] ?></td> 
       <td><?= $row['safe'] ?></td> 
       <td><?= $row['fuel'] ?></td> 
       <td><?= $row['price'] ?></td>     
-      <td><button class="btn btn-primary" style="height:40px" onclick="itemEditForm('<?= $row[
-          'Id'
-      ] ?>')">Edit</button></td>
-      <td><button class="btn btn-danger" style="height:40px" onclick="itemDelete('<?= $row[
-          'Id'
-      ] ?>')">Delete</button></td>
+      <td><button class="btn btn-primary" style="height:40px" onclick="itemEditForm('<?= $row['Id'] ?>')">Edit</button></td>
+      <td><button class="btn btn-danger" style="height:40px" onclick="itemDelete('<?= $row['Id'] ?>')">Delete</button></td>
       </tr>
       <?php $count = $count + 1;}
     }
@@ -47,7 +43,7 @@
 
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-secondary " style="height:40px" data-toggle="modal" data-target="#myModal">
-    Add Product
+    Add Car
   </button>
 
   <!-- Modal -->
@@ -57,29 +53,29 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">New Product Item</h4>
+          <h4 class="modal-title">New Car</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
           <form  enctype='multipart/form-data' onsubmit="addItems()" method="POST">
             <div class="form-group">
               <label for="name">Name:</label>
-              <input type="text" class="form-control" id="p_name">
+              <input type="text" class="form-control" id="name" required>
             </div>
             <div class="form-group">
-              <label for="name">Brand:</label>
-              <input type="text" class="form-control" id="p_brand">
+              <label for="brand">Brand:</label>
+              <input type="text" class="form-control" id="brand" required>
             </div>
             <div class="form-group">
-              <label for="desc">Model:</label>
-              <input type="text" class="form-control" id="p_model">
+              <label for="qty">Model:</label>
+              <input type="number" class="form-control" id="model" required>
             </div>
             <div class="form-group">
               <label>Category:</label>
-              <select id="category">
-                <option value="hatchback">hatchback</option>
-                <option value="sedan">Sedan</option>
-                <option value="suv">SUVs/MUVs</option>
+              <select id="category" >
+                  <option value="hatchback">Hatchback</option>
+                  <option value="sedan">Sedan</option>
+                  <option value="suv">SUVs/MUVs</option>
               </select>
             </div>
             <div class="form-group">
@@ -87,20 +83,20 @@
                 <input type="file" class="form-control-file" id="file">
             </div>
             <div class="form-group">
-              <label for="desc">Color:</label>
-              <input type="text" class="form-control" id="p_color">
-            </div>  
-            <div class="form-group">
-              <label for="desc">Safe:</label>
-              <input type="text" class="form-control" id="p_safe">
+              <label for="color">Color:</label>
+              <input type="text" class="form-control" id="color" required>
             </div>
             <div class="form-group">
-              <label for="desc">Fuel:</label>
-              <input type="text" class="form-control" id="p_fuel">
+              <label for="safe">Safe:</label>
+              <input type="text" class="form-control" id="safe" required>
             </div>
             <div class="form-group">
-              <label for="desc">Price:</label>
-              <input type="text" class="form-control" id="p_price">
+              <label for="fuel">Fuel:</label>
+              <input type="text" class="form-control" id="fuel" required>
+            </div>
+            <div class="form-group">
+              <label for="price">Price:</label>
+              <input type="number" class="form-control" id="price" required>
             </div>
             <div class="form-group">
               <button type="submit" class="btn btn-secondary" id="upload" style="height:40px">Add Item</button>
@@ -114,8 +110,5 @@
       </div>
       
     </div>
-  </div>
-
-  
 </div>
    

@@ -92,28 +92,28 @@ function ChangePay(id){
 
 //add product data
 function addItems(){
-    var p_name=$('#p_name').val();
-    var p_brand = $('#p_brand').val();
-    var p_model = $('#p_model').val();
+    var name=$('#name').val();
+    var brand=$('#brand').val();
+    var model=$('#model').val();
     var category=$('#category').val();
     var upload=$('#upload').val();
     var file=$('#file')[0].files[0];
-    var p_color = $('#p_color').val();
-    var p_safe = $('#p_safe').val();
-    var p_fuel = $('#p_fuel').val();
-    var p_price = $('#p_price').val();
+    var color=$('#color').val();
+    var safe=$('#safe').val();
+    var fuel=$('#fuel').val();
+    var price=$('#price').val();
 
     var fd = new FormData();
-    fd.append('p_name', p_name);
-    fd.append('p_brand', p_brand);
-    fd.append('p_model', p_model);
+    fd.append('name', name);
+    fd.append('brand', brand);
+    fd.append('model', model);
     fd.append('category', category);
     fd.append('file', file);
     fd.append('upload', upload);
-    fd.append('p_color', p_color);
-    fd.append('p_safe', p_safe);
-    fd.append('p_fuel', p_fuel);
-    fd.append('p_price', p_price);
+    fd.append('color', color);
+    fd.append('safe', safe);
+    fd.append('fuel', fuel);
+    fd.append('price', price);
     $.ajax({
         url:"./controller/addItemController.php",
         method:"post",
@@ -142,29 +142,29 @@ function itemEditForm(id){
 
 //update product after submit
 function updateItems(){
-    var product_id = $('#product_id').val();
-    var p_name = $('#p_name').val();
-    var p_brand = $('#p_brand').val();
-    var p_model = $('#p_model').val();
+    var Id = $('#Id').val();
+    var name = $('#name').val();
+    var brand = $('#brand').val();
+    var model = $('#model').val();
     var category = $('#category').val();
     var existingImage = $('#existingImage').val();
     var newImage = $('#newImage')[0].files[0];
-    var p_color = $('#p_color').val();
-    var p_safe = $('#p_safe').val();
-    var p_fuel = $('#p_fuel').val();
-    var p_price = $('#p_price').val();
+    var color = $('#color').val();
+    var safe = $('#safe').val();
+    var fuel = $('#fuel').val();
+    var price = $('#price').val();
     var fd = new FormData();
-    fd.append('product_id', product_id);
-    fd.append('p_name', p_name);
-    fd.append('p_brand', p_brand);
-    fd.append('p_model', p_model);
+    fd.append('Id', Id);
+    fd.append('name', name);
+    fd.append('brand', brand);
+    fd.append('model', model);
     fd.append('category', category);
-    fd.append('p_existingImage', existingImage);
-    fd.append('p_newImage', newImage);
-    fd.append('p_color', p_color);
-    fd.append('p_safe', p_safe);
-    fd.append('p_fuel', p_fuel);
-    fd.append('p_price', p_price);
+    fd.append('existingImage', existingImage);
+    fd.append('newImage', newImage);
+    fd.append('color', color);
+    fd.append('safe', safe);
+    fd.append('fuel', fuel);
+    fd.append('price', price);
    
     $.ajax({
       url:'./controller/updateItemController.php',

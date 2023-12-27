@@ -1,29 +1,22 @@
 <?php
-    include_once "../config/dbconnect.php";
+    include_once "../config/dbconnect.php"; 
 
-    $Id= $_POST['product_id'];
-    $name = $_POST['p_name'];
-    $brand = $_POST['p_brand'];
-    $model = $_POST['p_model'];
-    $category = $_POST['category'];
-    $color = $_POST['p_color'];
-    $safe = $_POST['p_safe'];
-    $fuel = $_POST['p_fuel'];
-    $price = $_POST['p_price'];
-    // var category = $('#category').val();
-    // var existingImage = $('#existingImage').val();
-    // var newImage = $('#newImage')[0].files[0];
-    // var color = $('#p_color').val();
-    // var safe = $('#p_safe').val();
-    // var fuel = $('#p_fuel').val();
-    // var price = $('#p_price').val();
+    $Id=$_POST['Id'];
+    $name= $_POST['name'];
+    $brand= $_POST['brand'];
+    $model= $_POST['model'];
+    $category= $_POST['category'];
+    $color= $_POST['color'];
+    $safe= $_POST['safe'];
+    $fuel= $_POST['fuel'];
+    $price= $_POST['price'];
 
-    if(isset($_FILES['newImage']) ){
+    if( isset($_FILES['newImage']) ){
         
-        $location="./uploads/";
+        $location="images/cars/";
         $img = $_FILES['newImage']['name'];
         $tmp = $_FILES['newImage']['tmp_name'];
-        $dir = '../uploads/';
+        $dir = '../images/cars/';
         $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
         $valid_extensions = array('jpeg', 'jpg', 'png', 'gif','webp');
         $image =rand(1000,1000000).".".$ext;
@@ -40,7 +33,7 @@
         brand='$brand', 
         model=$model,
         category='$category',
-        path='$final_image' 
+        path='$final_image',
         color='$color',
         safe='$safe',
         fuel='$fuel',

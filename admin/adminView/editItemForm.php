@@ -12,26 +12,46 @@
 ?>
 <form id="update-Items" onsubmit="updateItems()" enctype='multipart/form-data'>
 	<div class="form-group">
-      <input type="text" class="form-control" id="product_id" value="<?=$row1['Id']?>" hidden>
+      <input type="text" class="form-control" id="Id" value="<?=$row1['Id']?>" hidden>
     </div>
     <div class="form-group">
       <label for="name">Name:</label>
-      <input type="text" class="form-control" id="p_name" value="<?=$row1['name']?>">
+      <input type="text" class="form-control" id="name" value="<?=$row1['name']?>">
     </div>
     <div class="form-group">
-      <label for="name">Brand:</label>
-      <input type="text" class="form-control" id="p_brand" value="<?=$row1['brand']?>">
+      <label for="brand">Brand:</label>
+      <input type="text" class="form-control" id="brand" value="<?=$row1['brand']?>">
     </div>
     <div class="form-group">
-      <label for="desc">Model:</label>
-      <input type="text" class="form-control" id="p_model" value="<?=$row1['model']?>">
+      <label for="model">Model:</label>
+      <input type="number" class="form-control" id="model" value="<?=$row1['model']?>">
     </div>
     <div class="form-group">
       <label>Category:</label>
       <select id="category">
-          <option value="hatchback">hatchback</option>
-          <option value="sedan">Sedan</option>
-          <option value="suv">SUVs/MUVs</option>
+        <?php
+          if($row1['category'] == "hatchback")
+          {
+            echo '
+            <option value="hatchback" selected>Hatchback</option>
+            <option value="sedan">Sedan</option>
+            <option value="suv">SUVs/MUVs</option>';
+          }
+          elseif($row1['category'] == "sedan")
+          {
+            echo '
+            <option value="hatchback">Hatchback</option>
+            <option value="sedan" selected>Sedan</option>
+            <option value="suv">SUVs/MUVs</option>';
+          }
+          elseif($row1['category'] == "suv")
+          {
+            echo '
+            <option value="hatchback">Hatchback</option>
+            <option value="sedan">Sedan</option>
+            <option value="suv" selected>SUVs/MUVs</option>';
+          }
+        ?>
       </select>
     </div>
       <div class="form-group">
@@ -43,20 +63,20 @@
          </div>
     </div>
     <div class="form-group">
-      <label for="desc">Color:</label>
-      <input type="text" class="form-control" id="p_color" value="<?=$row1['color']?>">
+      <label for="model">Color:</label>
+      <input type="text" class="form-control" id="color" value="<?=$row1['color']?>">
     </div>
     <div class="form-group">
-      <label for="desc">Safe:</label>
-      <input type="text" class="form-control" id="p_safe" value="<?=$row1['safe']?>">
+      <label for="safe">Safe:</label>
+      <input type="text" class="form-control" id="safe" value="<?=$row1['safe']?>">
     </div>
     <div class="form-group">
-      <label for="desc">Fuel:</label>
-      <input type="text" class="form-control" id="p_fuel" value="<?=$row1['fuel']?>">
+      <label for="fuel">Fuel:</label>
+      <input type="text" class="form-control" id="fuel" value="<?=$row1['fuel']?>">
     </div>
     <div class="form-group">
-      <label for="desc">Price:</label>
-      <input type="text" class="form-control" id="p_price" value="<?=$row1['price']?>">
+      <label for="price">price:</label>
+      <input type="number" class="form-control" id="price" value="<?=$row1['price']?>">
     </div>
     <div class="form-group">
       <button type="submit" style="height:40px" class="btn btn-primary">Update Item</button>
