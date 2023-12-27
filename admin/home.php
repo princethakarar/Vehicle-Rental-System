@@ -10,7 +10,6 @@
   </head>
 </head>
 <body >
-    
         <?php
             include "./adminHeader.php";
             include "./sidebar.php";
