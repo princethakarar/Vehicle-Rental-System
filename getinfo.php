@@ -24,7 +24,7 @@
     <p>Price : <?=$row1['price']?></p>
 </div>
 
-<h2>Your Details</h2>
+<h2 style="margin-top:20px;">Your Details</h2>
 <form action="" onsubmit="addOrder()" method="post">
     <div class="form-group">
         <input type="text" id="Id" value="<?=$row1['Id']?>" hidden>

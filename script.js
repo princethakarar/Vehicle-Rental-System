@@ -166,10 +166,9 @@ brand.addEventListener("change", function() {
                             <img src='${item.path}' alt="">
                         </div>
                         <div class="right">
-                            <p class="model">${item.model}</p>
-                            <h3 class="name">${item.brand} ${item.name}</h3>
-                            <h2 class="price">&#8377;${item.price}<span>/Day</span></h2>
-                            <a href="#" onclick="toggle(${item.id}); getinfo(${item.id})" class="btn">Rent Now</a>
+                        <h3 class="name">${item.brand} ${item.name}</h3>
+                        <h2 class="price">&#8377;${item.price}<span>/Day</span></h2>
+                            <a href="#cars" onclick="toggle(); getinfo(${item.Id})" class="btn">Rent Now</a>
                         </div>
                     </div>
                 `;
