@@ -1,6 +1,7 @@
 let menu = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 let buttons = document.querySelectorAll(".button");
+let popup = document.querySelector("#popup");
 
 menu.addEventListener("click",() =>{
     menu.classList.toggle("bx-x");
@@ -47,7 +48,9 @@ window.onload = function() {
         if (this.readyState == 4 && this.status == 200) {
             let response = JSON.parse(this.responseText);
             let out = "";
+            let out1 = "";
             container.innerHTML = "";
+            popup.innerHTML = "";
             for(let item of response)
             {
                 out += `
@@ -58,12 +61,30 @@ window.onload = function() {
                         <div class="right">
                         <h3 class="name">${item.brand} ${item.name}</h3>
                         <h2 class="price">&#8377;${item.price}<span>/Day</span></h2>
-                            <a href="#" class="btn">Rent Now</a>
+                            <a href="#cars" onclick="toggle()" class="btn">Rent Now</a>
                         </div>
                     </div>
                 `;
+
+                out1 += `
+                <div id="popup">
+                    <h2>Car Details</h2>
+                    <div class"car">
+                        <img src="${item.path}" alt="${item.name}">
+                    </div>
+                    <p>Brand : ${item.brand}</p>
+                    <p>Name : ${item.name}</p>
+                    <p>Model : ${item.model}</p>
+                    <p>category : ${item.category}</p>
+                    <p>Color : ${item.color}</p>
+                    <p>Safe : ${item.safe}</p>
+                    <p>Fuel : ${item.fuel}</p>
+                    <p>Price : ${item.price}</p>
+                    <a href="#car" onclick="toggle()">Book Now</a>
+            `;
             }
             container.innerHTML = out;
+            // popup.innerHTML = out1
         }
     };
     http.open('POST', "getdata.php", true);
@@ -100,7 +121,10 @@ brand.addEventListener("change", function() {
         {
             let response = JSON.parse(this.responseText);
             let out = "";
+            let out1 = "";
             container.innerHTML = "";
+            popup.innerHTML = "";
+
             for(let item of response)
             {
                 out += `
@@ -112,12 +136,30 @@ brand.addEventListener("change", function() {
                             <p class="model">${item.model}</p>
                             <h3 class="name">${item.brand} ${item.name}</h3>
                             <h2 class="price">&#8377;${item.price}<span>/Day</span></h2>
-                            <a href="#" class="btn">Rent Now</a>
+                            <a href="#" onclick="toggle()" class="btn">Rent Now</a>
                         </div>
                     </div>
                 `;
+
+                out1 += `
+                    <div id="popup">
+                        <h2>Car Details</h2>
+                        <div class"car">
+                            <img src="${item.path}" alt="${item.name}">
+                        </div>
+                        <p>Brand : ${item.brand}</p>
+                        <p>Name : ${item.name}</p>
+                        <p>Model : ${item.model}</p>
+                        <p>category : ${item.category}</p>
+                        <p>Color : ${item.color}</p>
+                        <p>Safe : ${item.safe}</p>
+                        <p>Fuel : ${item.fuel}</p>
+                        <p>Price : ${item.price}</p>
+                        <a href="#car" onclick="toggle()">Book Now</a>
+                `;
             }
             container.innerHTML = out;
+            // popup.innerHTML = out1;
         };
     }
 

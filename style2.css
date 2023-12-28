@@ -1,0 +1,30 @@
+.container1#blur.active{
+    filter: blur(10px);
+}
+
+#popup a{
+    border: 1px solid black;
+    color: white;
+    background-color: grey;
+}
+
+#popup 
+{
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0,0,0,.30);
+    background: white;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#popup.active{
+    top: 250px;
+    visibility: visible;
+    opacity: 1;
+}

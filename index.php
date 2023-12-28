@@ -8,10 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehicle Rental System</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 </head>
 
 <body>
+    <div class="container1" id="blur">
     <header>
         <a href="#" class="logo"><img src="images/logo2.png" alt="logo"></a>
         <div class="bx bx-menu" id="menu-icon"></div>
@@ -81,21 +83,21 @@
         <div class="cars-container">
             <!-- <div class="box">
                 <div class="box-image">
-                    <img src="images/cars/car1.jpg">
+                    <img src="images/cars/alto.png">
                 </div>
                 <p>2017</p>
                 <h3>2018 Honda Civic</h3>
                 <h2>&#8377;5000 | &#8377;500 <span>/Month</span> </h2>
-                <a href="#" class="btn">Rent Now</a>
+                <a href="#cars" onclick="toggle()" class="btn">Rent Now</a>
             </div>  
             <div class="box">
                 <div class="box-image">
-                    <img src="images/cars/car1.jpg">
+                    <img src="images/cars/alto.png">
                 </div>
                 <p>2017</p>
                 <h3>2018 Honda Civic</h3>
                 <h2>&#8377;5000 | &#8377;500 <span>/Month</span> </h2>
-                <a href="#" class="btn">Rent Now</a>
+                <a href="#cars" onclick="toggle()" class="btn">Rent Now</a>
             </div>  -->
         </div>
     </section>  
@@ -229,11 +231,36 @@
             <a href="#"><i class='bx bxl-twitter'></i></a>
         </div>
     </div>
+    </div>
+    <div id="popup">
+        <h2>Car Details</h2>
+        <div class"car">
+            <img src="images/cars/alto.png" alt="">
+        </div>
+        <p>Brand : </p>
+        <p>Name : </p>
+        <p>Model : </p>
+        <p>category : </p>
+        <p>Color : </p>
+        <p>Safe : </p>
+        <p>Fuel : </p>
+        <p>Price : </p>
+        <a href="#car" onclick="toggle()">Book Now</a>
+    </div>
 
     <!-- scroll reveal -->
 
     <script src="https://unpkg.com/scrollreveal"></script>
 
+    <script>
+        function toggle()
+        {
+            var blur = document.getElementById('blur');
+            blur.classList.toggle('active');
+            var popup = document.getElementById('popup');
+            popup.classList.toggle('active');
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 

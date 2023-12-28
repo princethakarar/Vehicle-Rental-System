@@ -6,6 +6,7 @@
         <th class="text-center">S.N.</th>
         <th class="text-center">Username</th>
         <th class="text-center">Email</th>
+        <th class="text-center" colspan="2">Action</th>
       </tr>
     </thead>
     <?php
@@ -21,6 +22,7 @@
       <td><?=$count?></td>
       <td><?=$row["name"]?></td>
       <td><?=$row["email"]?></td>
+      <td><button class="btn btn-danger" style="height:40px" onclick="userDelete('<?= $row['Id'] ?>')">Delete</button></td>
     </tr>
     <?php
             $count=$count+1;

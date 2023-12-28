@@ -194,6 +194,19 @@ function itemDelete(id){
     });
 }
 
+//delete user data
+function userDelete(id){
+    $.ajax({
+        url:"./controller/deleteUserController.php",
+        method:"post",
+        data:{record:id},
+        success:function(data){
+            alert('User Successfully deleted');
+            $('form').trigger('reset');
+            showCustomers();
+        }
+    });
+}
 
 //delete cart data
 function cartDelete(id){
