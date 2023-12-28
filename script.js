@@ -23,17 +23,72 @@ const sr = ScrollReveal ({
 sr.reveal('.text',{delay:50,origin:'top'})
 sr.reveal('.car img',{delay:50,origin:'bottom'})
 sr.reveal('.form-container form',{delay:50,origin:'left'})
-sr.reveal('.heading',{delay:100,origin:'top'})
-// sr.reveal('.car-container .box',{delay:200,origin:'top'})
-// sr.reveal('.heading1',{delay:100,origin:'top'})
-// sr.reveal('.heading2',{delay:200,origin:'top'})
-sr.reveal('.about-container .about-image',{delay:300,origin:'top'})
-sr.reveal('.about-container .about-text',{delay:300,origin:'top'})
-// sr.reveal('.heading3',{delay:300,origin:'top'})
-sr.reveal('.reviews-container .box',{delay:400,origin:'top'})
-// sr.reveal('.heading4',{delay:400,origin:'top'})
-sr.reveal('.faq-container .box',{delay:500,origin:'top'})
-sr.reveal('.newsletter .box',{delay:600,origin:'bottom'})
+// sr.reveal('.heading',{delay:100,origin:'top'})
+// // sr.reveal('.car-container .box',{delay:200,origin:'top'})
+// // sr.reveal('.heading1',{delay:100,origin:'top'})
+// // sr.reveal('.heading2',{delay:200,origin:'top'})
+// sr.reveal('.about-container .about-image',{delay:300,origin:'top'})
+// sr.reveal('.about-container .about-text',{delay:300,origin:'top'})
+// // sr.reveal('.heading3',{delay:300,origin:'top'})
+// sr.reveal('.reviews-container .box',{delay:400,origin:'top'})
+// // sr.reveal('.heading4',{delay:400,origin:'top'})
+// sr.reveal('.faq-container .box',{delay:500,origin:'top'})
+// sr.reveal('.newsletter .box',{delay:600,origin:'bottom'})
+
+// function to get information of specific car
+
+function getinfo(id){
+    $.ajax({
+        url:"getinfo.php",
+        method:"post",
+        data:{record:id},
+        success:function(data){
+            $('#popup').html(data);
+        }
+    });
+}
+
+function toggle(id)
+{
+    var blur = document.getElementById('blur');
+    blur.classList.toggle('active');
+    var popup = document.getElementById('popup');
+    popup.classList.toggle('active');
+}
+
+function addOrder(){
+    var Id = $('#Id').val();
+    var brand = $('#Brand').val();
+    var userName = $('#userName').val();
+    var location = $('#location').val();
+    var pickDate = $('#pickDate').val();
+    var returnDate = $('#returnDate').val();
+    var carName = $('#carName').val();
+    var price = $('#price').val();
+
+    var fd = new FormData();
+    fd.append('Id', Id);
+    fd.append('userName', userName);
+    fd.append('location', location);
+    fd.append('pickDate', pickDate);
+    fd.append('returnDate', returnDate);
+    fd.append('carName', carName);
+    fd.append('brand', brand);
+    fd.append('price', price);
+   
+    $.ajax({
+      url:'addOrder.php',
+      method:'post',
+      data:fd,
+      processData: false,
+      contentType: false,
+      success: function(data){
+        alert('Order Placed Success.');
+        $('form').trigger('reset');
+        showProductItems();
+      }
+    });
+}
 
 // fetch particular data from database
 
@@ -48,9 +103,7 @@ window.onload = function() {
         if (this.readyState == 4 && this.status == 200) {
             let response = JSON.parse(this.responseText);
             let out = "";
-            let out1 = "";
             container.innerHTML = "";
-            popup.innerHTML = "";
             for(let item of response)
             {
                 out += `
@@ -61,30 +114,12 @@ window.onload = function() {
                         <div class="right">
                         <h3 class="name">${item.brand} ${item.name}</h3>
                         <h2 class="price">&#8377;${item.price}<span>/Day</span></h2>
-                            <a href="#cars" onclick="toggle()" class="btn">Rent Now</a>
+                            <a href="#cars" onclick="toggle(); getinfo(${item.Id})" class="btn">Rent Now</a>
                         </div>
                     </div>
                 `;
-
-                out1 += `
-                <div id="popup">
-                    <h2>Car Details</h2>
-                    <div class"car">
-                        <img src="${item.path}" alt="${item.name}">
-                    </div>
-                    <p>Brand : ${item.brand}</p>
-                    <p>Name : ${item.name}</p>
-                    <p>Model : ${item.model}</p>
-                    <p>category : ${item.category}</p>
-                    <p>Color : ${item.color}</p>
-                    <p>Safe : ${item.safe}</p>
-                    <p>Fuel : ${item.fuel}</p>
-                    <p>Price : ${item.price}</p>
-                    <a href="#car" onclick="toggle()">Book Now</a>
-            `;
             }
             container.innerHTML = out;
-            // popup.innerHTML = out1
         }
     };
     http.open('POST', "getdata.php", true);
@@ -121,9 +156,7 @@ brand.addEventListener("change", function() {
         {
             let response = JSON.parse(this.responseText);
             let out = "";
-            let out1 = "";
             container.innerHTML = "";
-            popup.innerHTML = "";
 
             for(let item of response)
             {
@@ -136,30 +169,12 @@ brand.addEventListener("change", function() {
                             <p class="model">${item.model}</p>
                             <h3 class="name">${item.brand} ${item.name}</h3>
                             <h2 class="price">&#8377;${item.price}<span>/Day</span></h2>
-                            <a href="#" onclick="toggle()" class="btn">Rent Now</a>
+                            <a href="#" onclick="toggle(${item.id}); getinfo(${item.id})" class="btn">Rent Now</a>
                         </div>
                     </div>
                 `;
-
-                out1 += `
-                    <div id="popup">
-                        <h2>Car Details</h2>
-                        <div class"car">
-                            <img src="${item.path}" alt="${item.name}">
-                        </div>
-                        <p>Brand : ${item.brand}</p>
-                        <p>Name : ${item.name}</p>
-                        <p>Model : ${item.model}</p>
-                        <p>category : ${item.category}</p>
-                        <p>Color : ${item.color}</p>
-                        <p>Safe : ${item.safe}</p>
-                        <p>Fuel : ${item.fuel}</p>
-                        <p>Price : ${item.price}</p>
-                        <a href="#car" onclick="toggle()">Book Now</a>
-                `;
             }
             container.innerHTML = out;
-            // popup.innerHTML = out1;
         };
     }
 

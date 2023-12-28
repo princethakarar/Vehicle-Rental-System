@@ -232,25 +232,20 @@
         </div>
     </div>
     </div>
+
+    <!-- popup box -->
+
     <div id="popup">
-        <h2>Car Details</h2>
-        <div class"car">
-            <img src="images/cars/alto.png" alt="">
-        </div>
-        <p>Brand : </p>
-        <p>Name : </p>
-        <p>Model : </p>
-        <p>category : </p>
-        <p>Color : </p>
-        <p>Safe : </p>
-        <p>Fuel : </p>
-        <p>Price : </p>
-        <a href="#car" onclick="toggle()">Book Now</a>
+        <?php
+            // include "getinfo.php";
+        ?>
     </div>
+
 
     <!-- scroll reveal -->
 
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>
 
     <script>
         function toggle()

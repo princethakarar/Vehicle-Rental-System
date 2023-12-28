@@ -8,10 +8,10 @@
     background-color: grey;
 }
 
-#popup 
+div#popup 
 {
     position: fixed;
-    top: 200px;
+    /* margin-top: 50px; */
     left: 50%;
     transform: translate(-50%,-50%);
     width: 600px;
@@ -21,10 +21,34 @@
     visibility: hidden;
     opacity: 0;
     transition: 0.5s;
+    max-height: 90vh;
+    overflow-y: scroll;
 }
 
 #popup.active{
     top: 250px;
     visibility: visible;
     opacity: 1;
+}
+
+#popup .head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#popup .head button{
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 30px;
+}
+
+#popup .car img{
+    height: 100px;
+}
+
+#popup .car-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
