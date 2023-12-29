@@ -36,6 +36,9 @@
         <input type="text" id="carName" value="<?=$row1['name']?>" hidden>
     </div>
     <div class="form-group">
+        <input type="text" id="path" value="<?=$row1['path']?>" hidden>
+    </div>
+    <div class="form-group">
         <input type="text" id="Brand" value="<?=$row1['brand']?>" hidden>
     </div>
     <div class="form-group">

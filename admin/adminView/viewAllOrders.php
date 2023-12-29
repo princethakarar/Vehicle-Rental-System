@@ -4,10 +4,13 @@
     <thead>
       <tr>
         <th>O.N.</th>
-        <th>Customer</th>
-        <th>Contact</th>
-        <th>OrderDate</th>
-        <th>Payment Method</th>
+        <th>Customer Name</th>
+        <th>Car Name</th>
+        <th>Brand</th>
+        <th>Price</th>
+        <th>Location</th>
+        <th>PickUp Date</th>
+        <th>return Date</th>
         <th>Order Status</th>
         <th>Payment Status</th>
         <th>More Details</th>
@@ -22,37 +25,41 @@
         while ($row=$result-> fetch_assoc()) {
     ?>
        <tr>
-          <td><?=$row["order_id"]?></td>
-          <td><?=$row["delivered_to"]?></td>
-          <td><?=$row["phone_no"]?></td>
-          <td><?=$row["order_date"]?></td>
-          <td><?=$row["pay_method"]?></td>
+          <td><?=$row["Id"]?></td>
+          <td><?=$row["username"]?></td>
+          <td><?=$row["carname"]?></td>
+          <td><?=$row["brand"]?></td>
+          <td><?=$row["price"]?></td>
+          <td><?=$row["location"]?></td>
+          <td><?=$row["pickdate"]?></td>
+          <td><?=$row["returndate"]?></td>
+
            <?php 
                 if($row["order_status"]==0){
                             
             ?>
-                <td><button class="btn btn-danger" onclick="ChangeOrderStatus('<?=$row['order_id']?>')">Pending </button></td>
+                <td><button class="btn btn-danger" onclick="ChangeOrderStatus('<?=$row['Id']?>')">Pending </button></td>
             <?php
                         
                 }else{
             ?>
-                <td><button class="btn btn-success" onclick="ChangeOrderStatus('<?=$row['order_id']?>')">Delivered</button></td>
+                <td><button class="btn btn-success" onclick="ChangeOrderStatus('<?=$row['Id']?>')">Delivered</button></td>
         
             <?php
             }
                 if($row["pay_status"]==0){
             ?>
-                <td><button class="btn btn-danger"  onclick="ChangePay('<?=$row['order_id']?>')">Unpaid</button></td>
+                <td><button class="btn btn-danger"  onclick="ChangePay('<?=$row['Id']?>')">Unpaid</button></td>
             <?php
                         
             }else if($row["pay_status"]==1){
             ?>
-                <td><button class="btn btn-success" onclick="ChangePay('<?=$row['order_id']?>')">Paid </button></td>
+                <td><button class="btn btn-success" onclick="ChangePay('<?=$row['Id']?>')">Paid </button></td>
             <?php
                 }
             ?>
               
-        <td><a class="btn btn-primary openPopup" data-href="./adminView/viewEachOrder.php?orderID=<?=$row['order_id']?>" href="javascript:void(0);">View</a></td>
+        <td><a class="btn btn-primary openPopup" data-href="./adminView/viewEachOrder.php?id=<?=$row['Id']?>" href="javascript:void(0);">View</a></td>
         </tr>
     <?php
             

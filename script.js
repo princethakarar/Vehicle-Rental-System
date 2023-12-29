@@ -64,6 +64,7 @@ function addOrder(){
     var pickDate = $('#pickDate').val();
     var returnDate = $('#returnDate').val();
     var carName = $('#carName').val();
+    var carImg = $('#path').val();
     var price = $('#price').val();
 
     var fd = new FormData();
@@ -74,6 +75,7 @@ function addOrder(){
     fd.append('returnDate', returnDate);
     fd.append('carName', carName);
     fd.append('brand', brand);
+    fd.append('carImg', carImg);
     fd.append('price', price);
    
     $.ajax({
@@ -114,7 +116,7 @@ window.onload = function() {
                         <div class="right">
                         <h3 class="name">${item.brand} ${item.name}</h3>
                         <h2 class="price">&#8377;${item.price}<span>/Day</span></h2>
-                            <a href="#cars" onclick="toggle(); getinfo(${item.Id})" class="btn">Rent Now</a>
+                        <a href="#cars" onclick="toggle(); getinfo(${item.Id})" class="btn">Rent Now</a> 
                         </div>
                     </div>
                 `;
@@ -151,12 +153,22 @@ brand.addEventListener("change", function() {
 
     let http = new XMLHttpRequest();
 
+
     http.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200)
         {
             let response = JSON.parse(this.responseText);
             let out = "";
             container.innerHTML = "";
+
+            // <?php
+            // session_start();
+            // if (isset($_SESSION['name'])) {
+            //     $temp = true;
+            // } else {
+            //     $temp = false;
+            // }
+            // ?>
 
             for(let item of response)
             {
@@ -168,7 +180,7 @@ brand.addEventListener("change", function() {
                         <div class="right">
                         <h3 class="name">${item.brand} ${item.name}</h3>
                         <h2 class="price">&#8377;${item.price}<span>/Day</span></h2>
-                            <a href="#cars" onclick="toggle(); getinfo(${item.Id})" class="btn">Rent Now</a>
+                        <a href="#cars" onclick="toggle(); getinfo(${item.Id})" class="btn">Rent Now</a>
                         </div>
                     </div>
                 `;

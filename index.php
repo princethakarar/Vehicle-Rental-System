@@ -25,8 +25,17 @@
             <li><a href="#faq">FAQ</a></li>
         </ul>
         <div class="header-btn">
-            <a href="register.php" class="sign-up">Sign up</a>
-            <a href="login.php" class="sign-in">sign in</a>
+            <?php
+                session_start();
+                if(!isset($_SESSION['name']))
+                {
+                    echo '<a href="register.php" class="sign-up">Sign up</a>
+                    <a href="login.php" class="sign-in">sign in</a>';
+                }
+                else{
+                    echo '<a href="logout.php" class="sign-in">Logout</a>';
+                }
+            ?>
         </div>
     </header>
     <section class="home" id="home">
