@@ -63,13 +63,13 @@ function showOrders(){
     });
 }
 
-function ChangeOrderStatus(id){
+function ChangeStatus(id){
     $.ajax({
-       url:"./controller/updateOrderStatus.php",
+       url:"./controller/updateStatus.php",
        method:"post",
        data:{record:id},
        success:function(data){
-           alert('Order Status updated successfully');
+           alert('Status updated successfully');
            $('form').trigger('reset');
            showOrders();
        }
@@ -201,7 +201,7 @@ function userDelete(id){
         method:"post",
         data:{record:id},
         success:function(data){
-            alert('User Successfully deleted');
+            alert('User Deleted Successfully');
             $('form').trigger('reset');
             showCustomers();
         }

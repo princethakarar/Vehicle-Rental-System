@@ -11,8 +11,7 @@
         <th>Location</th>
         <th>PickUp Date</th>
         <th>return Date</th>
-        <th>Order Status</th>
-        <th>Payment Status</th>
+        <th>Accept OR Decline</th>
         <th>More Details</th>
      </tr>
     </thead>
@@ -35,26 +34,15 @@
           <td><?=$row["returndate"]?></td>
 
            <?php 
-                if($row["order_status"]==0){
+                if($row["acc_den"]==0){
                             
             ?>
-                <td><button class="btn btn-danger" onclick="ChangeOrderStatus('<?=$row['Id']?>')">Pending </button></td>
+                <td><button class="btn btn-danger" onclick="ChangeStatus('<?=$row['Id']?>')">Declined </button></td>
             <?php
                         
                 }else{
             ?>
-                <td><button class="btn btn-success" onclick="ChangeOrderStatus('<?=$row['Id']?>')">Delivered</button></td>
-        
-            <?php
-            }
-                if($row["pay_status"]==0){
-            ?>
-                <td><button class="btn btn-danger"  onclick="ChangePay('<?=$row['Id']?>')">Unpaid</button></td>
-            <?php
-                        
-            }else if($row["pay_status"]==1){
-            ?>
-                <td><button class="btn btn-success" onclick="ChangePay('<?=$row['Id']?>')">Paid </button></td>
+                <td><button class="btn btn-success" onclick="ChangeStatus('<?=$row['Id']?>')">Accepted</button></td>
             <?php
                 }
             ?>

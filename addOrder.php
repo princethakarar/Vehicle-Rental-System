@@ -10,7 +10,7 @@
     $brand=$_POST['brand'];
     $carImg=$_POST['carImg'];
     $diff = strtotime($returnDate) - strtotime($pickDate);
-    $price=$_POST['price'] * (floor($diff / (60 * 60 * 24)) + 1);
+    $price=$_POST['price'] * (floor($diff / (60 * 60 * 24)));
 
     $insert = mysqli_query($conn,"INSERT INTO orders
     (username,carname,brand,price,location,pickdate,returndate,car_img)

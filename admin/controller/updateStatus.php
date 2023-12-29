@@ -4,7 +4,7 @@
    
     $order_id=$_POST['record'];
     //echo $order_id;
-    $sql = "SELECT order_status from orders where Id='$order_id'"; 
+    $sql = "SELECT acc_den from orders where Id='$order_id'"; 
     $result=$conn-> query($sql);
   //  echo $result;
 
@@ -12,11 +12,11 @@
     
    // echo $row["pay_status"];
     
-    if($row["order_status"]==0){
-         $update = mysqli_query($conn,"UPDATE orders SET order_status=1 where Id='$order_id'");
+    if($row["acc_den"]==0){
+         $update = mysqli_query($conn,"UPDATE orders SET acc_den=1 where Id=$order_id");
     }
-    else if($row["order_status"]==1){
-         $update = mysqli_query($conn,"UPDATE orders SET order_status=0 where Id='$order_id'");
+    else if($row["acc_den"]==1){
+         $update = mysqli_query($conn,"UPDATE orders SET acc_den=0 where Id=$order_id");
     }
     
         
