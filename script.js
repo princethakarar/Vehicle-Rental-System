@@ -98,7 +98,7 @@ let brand = document.querySelector("#brand");
 let heading = document.querySelector(".cars .head");
 let container = document.querySelector(".cars-container");
 
-window.onload = function() {
+window.onload = function car() {
     let http = new XMLHttpRequest();
     heading.classList.add("hide");
     http.onreadystatechange = function() {
