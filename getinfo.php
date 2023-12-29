@@ -10,6 +10,9 @@
     if($numberOfRow>0){
         while($row1=mysqli_fetch_array($qry)){
 ?>
+<?php
+    session_start();
+?>
 <div class="car">
     <img src="<?=$row1['path']?>" alt="<?=$row1['name']?>">
 </div>
@@ -36,7 +39,7 @@
         <input type="text" id="Brand" value="<?=$row1['brand']?>" hidden>
     </div>
     <div class="form-group">
-        <input type="text" id="userName" value="<?=$_SESSION['username']?>" hidden>
+        <input type="text" id="userName" value="<?=$_SESSION['name']?>" hidden>
     </div>
     <div class="form-group">
         <input type="number" id="price" value="<?=$row1['price']?>" hidden>

@@ -24,7 +24,6 @@
 
             if($db)
             {
-                
                     $name = $_POST['name'];
                     $mail = $_POST['mail'];
                     $pass = $_POST['pass'];
@@ -33,8 +32,10 @@
 
                     if(mysqli_query($db,$query))
                     {
-                        header('Location: login.php');  
+                        session_start();
+                        $_SESSION["name"]=$_POST["name"];
                         echo "<script>alert('You have Registered successfully...');</script>";
+                        header('Location: index.php');  
                     }
                     else
                         echo mysqli_error($db);

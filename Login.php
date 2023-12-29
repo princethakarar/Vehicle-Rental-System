@@ -23,13 +23,18 @@
             $mail = $_POST['mail'];
             $pass = $_POST['pass'];
 
-            $query = mysqli_query($db,"SELECT * FROM user WHERE email = '$mail' AND pass = '$pass'");
+            $query = mysqli_query($db,"SELECT name FROM user WHERE email = '$mail' AND pass = '$pass'");
 
             $n = mysqli_num_rows($query);
 
+            $row = mysqli_fetch_assoc($query);
+
             if ($n == 1) {
+                session_start();
+                $_SESSION["name"] = $row['name'];   
                 header('Location: index.php');
             } else {
+                echo "<script>alert('Invalid id or password');</script>";
                 echo mysqli_error($db);
             }
         } else {
