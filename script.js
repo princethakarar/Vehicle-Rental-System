@@ -37,6 +37,17 @@ sr.reveal('.form-container form',{delay:50,origin:'left'})
 
 // function to get information of specific car
 
+// function signOut(){  
+//     $.ajax({
+//         url:"logout.php",
+//         method:"post",
+//         data:{record:1},
+//         success:function(data){
+//             $('#popup').html(data);
+//         }
+//     });
+// }
+
 function getinfo(id){
     $.ajax({
         url:"getinfo.php",

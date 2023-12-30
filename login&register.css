@@ -1,13 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+@keyframes animation1{
+    from{
+        top: 0;
+    }
+    to{
+        top: 7vh;
+    }
 }
 
 body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #AEADF0;
+    background-image: url('images/about.png');
+    background-repeat: no-repeat;
+    background-position: 0 40vh;
+    background-size: cover;
+    background-color: #eeeff1;
 }
 
 form{
@@ -18,12 +34,19 @@ form{
 }
 
 .container{
-    background-color: #D8DCFF;
+    background: transparent;
+    background-color: #56567649;
+    backdrop-filter: blur(2px);
     position: relative;
     padding: 20px;
     border-radius: 10px;
-    top: 20vh;
+    top: 7vh;
     width: 270px;
+    z-index: 10;
+    animation-name: animation1;
+    animation-duration: 0.75s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
 }
 
 input{
@@ -37,7 +60,7 @@ input{
 }
 
 .btn{
-    background-color: #565676;
+    background-color: #fe5b3d;
     color: white;
     font-weight: 600;
     font-size: 20px;
@@ -52,4 +75,9 @@ input{
 
 .register{
     text-align: center;
+    color: white;
+}
+
+.register a{
+    color: #fe5b3d;
 }

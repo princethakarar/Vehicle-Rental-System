@@ -46,7 +46,7 @@
             </div>
             <img src="images/cars/nexon dark.png" alt="car">
         </div>
-        <div class="form-container">
+        <!-- <div class="form-container">
             <form action="">
                 <div class="input-box">
                     <span>Location</span>
@@ -60,9 +60,9 @@
                     <span>Return Date</span>
                     <input type="date">
                 </div>
-                <input type="submit" class="btn">
+                <input type="submit" class="btn" onclick="alert('Choose a Car')">
             </form>
-        </div>
+        </div> -->
     </section>
 
     <!-- cars -->

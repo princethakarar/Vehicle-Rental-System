@@ -59,6 +59,10 @@
         <span>Return Date</span>
         <input type="date" id="returnDate" required>
     </div>
+    <div style="display: flex; margin-top: 10px;">
+        <input type="checkbox" style="margin-right: 5px;" required>
+        <p>I have read and agree <a href="Terms and Conditions.pdf" target="_blank" style="background: transparent; color: blue; border: none; text-decoration: underline;">Terms & Conditions</a></p>
+    </div>
     <input type="submit" class="btn" value="Book Now">
 </form>
 <?php
