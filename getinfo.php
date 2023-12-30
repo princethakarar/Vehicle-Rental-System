@@ -1,7 +1,7 @@
-<div class="head">
+<!-- <div class="head"> -->
     <h2>Car Details</h2>
     <button type="button" class="close" onclick="toggle()">&times;</button>
-</div>
+<!-- </div> -->
 <?php
     include_once "admin/config/dbconnect.php";
 	$ID=$_POST['record'];

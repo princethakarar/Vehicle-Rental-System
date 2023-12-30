@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2023 at 06:31 AM
+-- Generation Time: Dec 30, 2023 at 02:26 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -108,7 +108,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`Id`, `username`, `carname`, `brand`, `price`, `location`, `pickdate`, `returndate`, `car_img`, `acc_den`) VALUES
-(3, 'prince', 'Verna', 'Hyundai', 8000, 'ahmedabad', '2023-12-30', '2024-01-01', 'images/cars/verna.png', 0);
+(4, 'Vaibhav', 'Creta', 'Hyundai', 4500, 'bv', '2023-12-30', '2023-12-31', 'images/cars/creta.png', 0);
 
 -- --------------------------------------------------------
 
@@ -128,8 +128,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`Id`, `name`, `email`, `pass`) VALUES
-(1, 'prince', 'prince.thakarar40@gmail.com', 123),
-(7, 'dhaval', 'dhavalsuchak2684@gmail.com', 555);
+(8, 'Prince', 'p@gmail.com', 123),
+(9, 'Keval', 'k@gmail.com', 123),
+(10, 'Janil', 'j@gmail.com', 123),
+(11, 'Dhaval', 'd@gmail.com', 123),
+(12, 'Vaibhav', 'v@gmail.com', 123);
 
 --
 -- Indexes for dumped tables
@@ -179,13 +182,13 @@ ALTER TABLE `cars`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `Id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

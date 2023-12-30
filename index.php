@@ -42,7 +42,7 @@
         <div class="car">
             <div class="text">
                 <h1><span>Looking</span> for <br>rent a car</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, reiciendis eaque!</p>
+                <p>Drive your journey with our wheels - <span>"</span>where every journey begins with seamless car Rental Experiences<span>"</span></p>
             </div>
             <img src="images/cars/nexon dark.png" alt="car">
         </div>
@@ -124,12 +124,8 @@
             </div>
             <div class="about-text">
                 <span>About Us</span>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex, nemo cupiditate! Quisquam officiis
-                    repudiandae incidunt, rerum ipsa blanditiis voluptatum natus suscipit eligendi non hic sed error
-                    saepe vel iste veritatis culpa est accusamus cupiditate?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam tempore pariatur nulla modi, illum
-                    vel cum totam eveniet.</p>
-                <a href="#" class="btn">Learn More</a>
+                <p>Welcome to <span>VRS</span>,<br> where our commitment to excellence drives every mile. We strive for excellence in every aspect, from the vehicles we offer to the service we provide. We're not just a transportation provider, we're your travel companion, ensuring every mile is memorable.</br></p>
+                <p><span>'</span> We hope you have a safe and pleasant journey <span>'</span></p>
             </div>
         </div>
     </section>
@@ -144,9 +140,9 @@
         <div class="reviews-container">
             <div class="box">
                 <div class="rev-image">
-                    <img src="images/prince_photo.jpg" alt="">
+                    <img src="images/user1.jpeg" alt="">
                 </div>
-                <h2>Someone Name</h2>
+                <h2>Abhishek Malhan</h2>
                 <div class="stars">
                     <i class='bx bxs-star'></i>
                     <i class='bx bxs-star'></i>
@@ -154,38 +150,36 @@
                     <i class='bx bxs-star'></i>
                     <i class='bx bxs-star-half'></i>
                 </div>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet consequuntur sequi labore aliquid
-                    error dolore id, facilis voluptas.</p>
+                <p>Excellent Service!<br>"I recently rented a car from VRS, and the experience was Awesome. I highly recommend VRS for a stress-free and enjoyable car rental experience"</p>
             </div>
             <div class="box">
                 <div class="rev-image">
-                    <img src="images/prince_photo.jpg" alt="">
+                    <img src="images/user2.jpg" alt="">
                 </div>
-                <h2>Someone Name</h2>
+                <h2>Nikita Mehta</h2>
                 <div class="stars">
                     <i class='bx bxs-star'></i>
                     <i class='bx bxs-star'></i>
                     <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
                     <i class='bx bxs-star-half'></i>
+                    <i class='bx bx-star'></i>
                 </div>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet consequuntur sequi labore aliquid
-                    error dolore id, facilis voluptas.</p>
+                <p>Good Experience<br>"Recently booked Ertiga from this website, was a worth-taking decision as they provide time to time service as per our requirements"</p>
             </div>
             <div class="box">
                 <div class="rev-image">
-                    <img src="images/prince_photo.jpg" alt="">
+                    <img src="images/user3.jpeg" alt="">
                 </div>
-                <h2>Someone Name</h2>
+                <h2>Anmol jaiswal</h2>
                 <div class="stars">
                     <i class='bx bxs-star'></i>
                     <i class='bx bxs-star'></i>
                     <i class='bx bxs-star'></i>
                     <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star-half'></i>
+                    <i class='bx bx-star'></i>
                 </div>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet consequuntur sequi labore aliquid
-                    error dolore id, facilis voluptas.</p>
+                <p>Efficient Drop-Off and Pick-Up<br>
+"One of the standout features of VRS is their efficient drop-off and pick-up process, It's a time-saver"</p>
             </div>
         </div>
 
@@ -202,20 +196,17 @@
             <div class="box">
                 <i class='bx bxs-map'></i>
                 <h2>Choose a location</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea mollitia debitis, dolores aliquam nulla
-                    sunt!</p>
+                <p>Our car hubs are available in all Metro Cities. Choose your ideal pickup spot and start your journey effortlessly.</p>
             </div>
             <div class="box">
                 <i class='bx bxs-calendar-check'></i>
                 <h2>Pick up date</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea mollitia debitis, dolores aliquam nulla
-                    sunt!</p>
+                <p>Pick a date that suits your plans, and we'll ensure your chosen wheels are ready to roll when you are</p>
             </div>
             <div class="box">
                 <i class='bx bxs-calendar-star'></i>
                 <h2>Book a car</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea mollitia debitis, dolores aliquam nulla
-                    sunt!</p>
+                <p>Book your ride with a few simple clicks. Choose a car, set your dates, and confirm your booking.</p>
             </div>
         </div>
     </section>

@@ -37,7 +37,10 @@ div#popup
     justify-content: space-between;
 }
 
-#popup .head button{
+#popup button{
+    position: fixed;
+    top: 0;
+    right: 15px;
     background: transparent;
     border: none;
     outline: none;
