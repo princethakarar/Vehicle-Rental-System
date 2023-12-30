@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2023 at 11:34 AM
+-- Generation Time: Dec 30, 2023 at 06:31 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `vrs`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `Id` int(3) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `pass` int(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`Id`, `email`, `pass`) VALUES
+(1, 'pthakarar1304@gmail.com', 123);
 
 -- --------------------------------------------------------
 
@@ -68,6 +87,32 @@ INSERT INTO `cars` (`Id`, `name`, `brand`, `model`, `category`, `path`, `color`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `Id` int(3) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `carname` varchar(50) NOT NULL,
+  `brand` varchar(50) NOT NULL,
+  `price` int(10) NOT NULL,
+  `location` varchar(150) NOT NULL,
+  `pickdate` date NOT NULL,
+  `returndate` date NOT NULL,
+  `car_img` varchar(50) NOT NULL,
+  `acc_den` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`Id`, `username`, `carname`, `brand`, `price`, `location`, `pickdate`, `returndate`, `car_img`, `acc_den`) VALUES
+(3, 'prince', 'Verna', 'Hyundai', 8000, 'ahmedabad', '2023-12-30', '2024-01-01', 'images/cars/verna.png', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -91,9 +136,21 @@ INSERT INTO `user` (`Id`, `name`, `email`, `pass`) VALUES
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Indexes for table `cars`
 --
 ALTER TABLE `cars`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`Id`);
 
 --
@@ -107,10 +164,22 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `Id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `cars`
 --
 ALTER TABLE `cars`
   MODIFY `Id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `Id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
