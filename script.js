@@ -77,6 +77,11 @@ function addOrder(){
     var carName = $('#carName').val();
     var carImg = $('#path').val();
     var price = $('#price').val();
+    var card_num = $('#card_num').val();
+    var card_hol = $('#card_hol').val();
+    var expire_mo = $('#expire_mo').val();
+    var expire_year = $('#expire_year').val();
+    var cvv = $('#cvv').val();
 
     var fd = new FormData();
     fd.append('Id', Id);
@@ -88,6 +93,11 @@ function addOrder(){
     fd.append('brand', brand);
     fd.append('carImg', carImg);
     fd.append('price', price);
+    fd.append('card_num', card_num);
+    fd.append('card_hol', card_hol);
+    fd.append('expire_mo', expire_mo);
+    fd.append('expire_year', expire_year);
+    fd.append('cvv', cvv);
    
     $.ajax({
       url:'addOrder.php',

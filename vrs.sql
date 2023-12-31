@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2023 at 02:26 PM
+-- Generation Time: Dec 31, 2023 at 12:23 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -108,7 +108,40 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`Id`, `username`, `carname`, `brand`, `price`, `location`, `pickdate`, `returndate`, `car_img`, `acc_den`) VALUES
-(4, 'Vaibhav', 'Creta', 'Hyundai', 4500, 'bv', '2023-12-30', '2023-12-31', 'images/cars/creta.png', 0);
+(53, 'Prince', 'Tigor', 'Tata', 3500, 'ahmedabad', '2024-01-05', '2024-01-06', 'images/cars/tigor.png', 0),
+(54, 'Prince', 'Swift Dzire', 'Maruti Suzuki', 7000, 'una', '2023-12-31', '2024-01-02', 'images/cars/swift dzire.png', 0),
+(55, 'Prince', 'Swift Dzire', 'Maruti Suzuki', 7000, 'rajkot', '2023-12-28', '2023-12-30', 'images/cars/swift dzire.png', 0),
+(56, 'Prince', 'Nexon', 'Tata', 7000, 'rajkot', '2023-12-31', '2024-01-02', 'images/cars/nexon dark.png', 0),
+(57, 'Prince', 'Harrier', 'Tata', 30000, 'bv', '2023-12-30', '2024-01-05', 'images/cars/harrier-dark.png', 0),
+(58, 'Prince', 'Tiago', 'Tata', 3000, 'klhh', '2024-01-03', '2024-01-04', 'images/cars/tiago.png', 0),
+(59, 'Prince', 'Harrier', 'Tata', 5000, 'una', '2024-01-01', '2024-01-02', 'images/cars/harrier-dark.png', 0),
+(60, 'Prince', 'Grand Vitara', 'Maruti Suzuki', 4500, 'gir', '2024-01-03', '2024-01-04', 'images/cars/grand vitara.png', 0),
+(61, 'Prince', 'i20', 'Hyundai', 7000, 'bv', '2024-01-04', '2024-01-06', 'images/cars/i20.png', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment_detail`
+--
+
+CREATE TABLE `payment_detail` (
+  `Id` int(3) NOT NULL,
+  `card_num` varchar(20) NOT NULL,
+  `holder` varchar(50) NOT NULL,
+  `expiration_month` int(2) NOT NULL,
+  `expiration_year` int(4) NOT NULL,
+  `cvv` varchar(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `payment_detail`
+--
+
+INSERT INTO `payment_detail` (`Id`, `card_num`, `holder`, `expiration_month`, `expiration_year`, `cvv`) VALUES
+(22, '0', '', 3, 2027, '0'),
+(23, '9999999999999999', '', 8, 2022, '9999'),
+(24, '2222222222222222', '', 4, 2028, '2222'),
+(25, '9999999999999999', 'shorya thakarar', 7, 2027, '9999');
 
 -- --------------------------------------------------------
 
@@ -157,6 +190,12 @@ ALTER TABLE `orders`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Indexes for table `payment_detail`
+--
+ALTER TABLE `payment_detail`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -182,7 +221,13 @@ ALTER TABLE `cars`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `Id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+
+--
+-- AUTO_INCREMENT for table `payment_detail`
+--
+ALTER TABLE `payment_detail`
+  MODIFY `Id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `user`

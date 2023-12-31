@@ -28,7 +28,7 @@
 </div>
 
 <h2 style="margin-top:20px;">Your Details</h2>
-<form action="" onsubmit="addOrder()" method="post">
+<form onsubmit="addOrder()" method="post">
     <div class="form-group">
         <input type="text" id="Id" value="<?=$row1['Id']?>" hidden>
     </div>
@@ -53,11 +53,58 @@
     </div>
     <div class="input-box">
         <span>Pick up Date</span>
-        <input type="date" id="pickDate" required>
+        <input type="date" id="pickDate" name="pickDate" required>
     </div>
     <div class="input-box">
         <span>Return Date</span>
         <input type="date" id="returnDate" required>
+    </div>
+    <h2 style="margin-top:20px;">Payment Details</h2>
+    <div class="input-box">
+        <span>Card Number</span>
+        <input type="text" id="card_num" maxlength="16" placeholder="XXXX XXXX XXXX XXXX" required>
+    </div>
+    <div class="input-box">
+        <span>Card Holder</span>
+        <input type="text" id="card_hol" maxlength="30" placeholder="Card Holder Name" required>
+    </div>
+    <div class="input-box">
+        <span>Expiration Month</span>
+        <select id="expire_mo" required>
+            <option value="Month" selected disabled>Month</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+    </div>
+    <div class="input-box">
+        <span>Expiration Year</span>
+        <select id="expire_year" required>
+            <option value="Year" selected disabled>Year</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+        </select>
+    </div>
+    <div class="input-box">
+        <span>CVV</span>
+        <input type="text" id="cvv" maxlength="4" placeholder="XXXX" required>
     </div>
     <div style="display: flex; margin-top: 10px;">
         <input type="checkbox" style="margin-right: 5px;" required>
