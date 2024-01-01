@@ -98,6 +98,12 @@ header {
   display: none;
 }
 
+.header-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .header-btn a {
   padding: 10px 20px;
   color: var(--text-color);
@@ -113,6 +119,16 @@ header {
 
 .header-btn .sign-in:hover {
   background: var(--main-color);
+}
+
+.header-btn .order_sta i{
+  font-size: 40px;
+  color: var(--text-color);
+  transition: 0.25s;
+}
+
+.header-btn .order_sta i:hover{
+  color: var(--second-color);
 }
 
 .home {

@@ -33,6 +33,7 @@
                     <a href="login.php" class="sign-in">sign in</a>';
                 }
                 else{
+                    echo '<a href="order status.php" class="order_sta"><i class="bx bxs-cart"></i></a>';
                     echo '<a href="logout.php" class="sign-in">Logout</a>';
                 }
             ?>

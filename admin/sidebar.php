@@ -10,7 +10,7 @@
     <a href="home.php" ><i class="fa fa-home"></i> Dashboard</a>
     <a href="#customers"  onclick="showCustomers()" ><i class="fa fa-users"></i> Customers</a> 
     <a href="#cars"   onclick="showProductItems()" ><i class="fa fa-car"></i></i> Cars</a>
-    <a href="#orders" onclick="showOrders()"><i class="fa fa-list"></i> Orders</a>
+    <a href="#orders" onclick="showOrders()"><i class="bx bxs-cart" style="font-size:35px;position:relative;left:-3px;"></i> Orders</a>
   
   <!---->
 </div>

@@ -13,7 +13,7 @@
             <input type="text" placeholder="Enter Name" name="name" required>
             <input type = "text" name="phno" minlength="10" maxlength = "10" placeholder="Enter Phone Number"/>
             <input type="text" placeholder="Enter Email" name="mail" required>
-            <input type="text" placeholder="Enter Licence" name="lno" maxlength="16" class="lno" required>
+            <input type="text" placeholder="Enter Licence Number" name="lno" maxlength="16" class="lno" required>
             <input type="password" placeholder="Enter Password" name="pass" required>
             <input type="submit" name="sb" value="Register" class="btn">
             <p class="register">Don't have account? <a href="Login.php">Login</a></p>
@@ -38,7 +38,7 @@
 
                     if($n > 0)
                     {
-                        // echo "<script>alert('This mail id is already registered...');</script>";
+                        echo "<script>alert('This mail id is already registered...');</script>";
                     }
                     else
                     {
@@ -48,32 +48,9 @@
                         {
                             session_start();
                             $_SESSION["name"]=$_POST["name"];
-                            $otp = rand(1000, 9999);   //Generate OTP
-                            include_once("SMTP/class.phpmailer.php");
-                            $message = '<div>
-                            <p><b>Hello!</b></p>
-                            <p>One Time Password for EMAIL verification</p>
-                            <br>
-                            <p>Your OTP is: <b>'.$otp.'</b></p>
-                            </div>';
-                            $email = new PHPMailer;
-                            $email->SetFrom('prince.thakarar40@gmail.com','VRS');
-                            $email->AddAddress($mail);
-                            $email->Subject = "Email Verification";
-                            $email->MsgHTML($message);
-                            $result = $email->Send();
-                            if($email->send())
-                            {
-                              $insert_query = mysqli_query($db,"update user set is_expired='0', otp='$otp' where email='$mail'");
-                              header('location:otp verification.php');
-                            }
-                            else
-                            {
-                                echo "<script>alert'email is not delivered';</script>";
-                            }
-                            // echo "<script>alert('You have Registered successfully...');</script>";
+                            echo "<script>alert('You have Registered successfully...');</script>";
                             sleep(1);  
-                            // header('Location: login.php');  
+                            header('Location: login.php');  
                         }
                         else
                             echo mysqli_error($db);
@@ -98,13 +75,6 @@
                 }
             }
         }
-
-        // let otp = document.querySelector("#otp");
-
-        // function toggle()
-        // {
-        //     otp.classList.remove('hide');
-        // }
     </script>
 </body>
 </html>
