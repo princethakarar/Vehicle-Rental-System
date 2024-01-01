@@ -59,10 +59,10 @@
         <span>Return Date</span>
         <input type="date" id="returnDate" required>
     </div>
-    <h2 style="margin-top:20px;">Payment Details</h2>
+    <h2 style="margin-top:20px;">Credit Card Details</h2>
     <div class="input-box">
         <span>Card Number</span>
-        <input type="text" id="card_num" maxlength="16" placeholder="XXXX XXXX XXXX XXXX" required>
+        <input type="text" id="card_num" maxlength="20" placeholder="XXXX XXXX XXXX XXXX" class="card_num" required>
     </div>
     <div class="input-box">
         <span>Card Holder</span>
@@ -119,3 +119,20 @@
         echo "no row found";
     }
 ?>
+    <script>
+        let input = document.querySelector(".card_num");
+
+        let i = true;
+
+        input.onkeydown = function () {
+            if (input.value.length > 0) {
+                if (input.value.length % 4 == 0 && i == true) {
+                    input.value += " ";
+                    i = false;
+                }
+                if (input.value.length % 5 == 0 && i == false) {
+                    input.value += " ";
+                }
+            }
+        }
+    </script>

@@ -10,8 +10,8 @@
     <div class="container">
         <form method="post">
         <h2 class="heading">Login</h2>
-            <input type="text" placeholder="Enter Email" name="mail">
-            <input type="password" placeholder="Enter Password" name="pass">
+            <input type="text" placeholder="Enter Email" name="mail" required>
+            <input type="password" placeholder="Enter Password" name="pass" required>
             <input type="submit" name="sb" value="Login" class="btn">
             <p class="register">Don't have account? <a href="register.php">Register</a></p>
         </form>
@@ -23,17 +23,25 @@
             $mail = $_POST['mail'];
             $pass = $_POST['pass'];
 
-            $query = mysqli_query($db,"SELECT name FROM user WHERE email = '$mail' AND pass = '$pass'");
+            $query1 = mysqli_query($db,"SELECT name FROM user WHERE email = '$mail'");
 
-            $n = mysqli_num_rows($query);
+            $n1 = mysqli_num_rows($query1);
 
-            $row = mysqli_fetch_assoc($query);
+            $query2 = mysqli_query($db,"SELECT name FROM user WHERE email = '$mail' AND pass = '$pass'");
 
-            if ($n == 1) {
+            $n2 = mysqli_num_rows($query2);
+
+            if ($n1 == 1 && $n2 == 1) {
                 session_start();
                 $_SESSION["name"] = $row['name'];   
                 header('Location: index.php');
-            } else {
+            } elseif($n1 == 0) {
+                echo "<script>alert('This email id doesn't exist...');</script>";
+                echo mysqli_error($db);
+            } elseif($n2 == 0) {
+                echo "<script>alert('Wrong password');</script>";
+                echo mysqli_error($db);
+            } else{
                 echo "<script>alert('Invalid id or password');</script>";
                 echo mysqli_error($db);
             }
