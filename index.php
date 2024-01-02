@@ -91,14 +91,14 @@
             </div>  
         </div>
         <div class="cars-container">
-            <!-- <div class="box">
+            <div class="box">
                 <div class="box-image">
                     <img src="images/cars/alto.png">
                 </div>
                 <p>2017</p>
                 <h3>2018 Honda Civic</h3>
                 <h2>&#8377;5000 | &#8377;500 <span>/Month</span> </h2>
-                <a href="#cars" onclick="toggle()" class="btn">Rent Now</a>
+                <a href="#cars" onclick="toggle(); getinfo('1')" class="btn">Rent Now</a> 
             </div>  
             <div class="box">
                 <div class="box-image">
@@ -107,8 +107,16 @@
                 <p>2017</p>
                 <h3>2018 Honda Civic</h3>
                 <h2>&#8377;5000 | &#8377;500 <span>/Month</span> </h2>
-                <a href="#cars" onclick="toggle()" class="btn">Rent Now</a>
-            </div>  -->
+                <?php
+                    if(isset($_SESSION["name"]))
+                    {
+                        echo `<a href='#cars' onclick='toggle(); getinfo("1")' class='btn'>Rent Now</a>`; 
+                    }
+                    else{
+                        echo '<a href="login.php" class="btn">Rent Now</a>'; 
+                    }
+                ?>
+            </div> 
         </div>
     </section>  
 
@@ -257,7 +265,7 @@
             popup.classList.toggle('active');
         }
     </script>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
 </body>
 
 </html>

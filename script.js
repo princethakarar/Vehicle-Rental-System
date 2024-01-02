@@ -126,17 +126,7 @@ window.onload = function car() {
                         <div class="right">
                         <h3 class="name">${item.brand} ${item.name}</h3>
                         <h2 class="price">&#8377;${item.price}<span>/Day</span></h2>
-                        <?php
-                            session_start();
-
-                            if(isset($_SESSION["name"]))
-                            {
-                                echo '<a href="#cars" onclick="toggle(); getinfo(${item.Id})" class="btn">Rent Now</a>';
-                            }
-                            else{
-                                echo '<a href="login.php" class="btn">Rent Now</a>';
-                            }
-                        ?>
+                        <a href="#cars" onclick="toggle(); getinfo(${item.Id})" class="btn">Rent Now</a> 
                         </div>
                     </div>
                 `;
