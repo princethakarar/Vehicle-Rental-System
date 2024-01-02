@@ -61,6 +61,7 @@ function addOrder(){
     var brand = $('#Brand').val();
     var userName = $('#userName').val();
     var location = $('#location').val();
+    var address = $('#address').val();
     var pickDate = $('#pickDate').val();
     var returnDate = $('#returnDate').val();
     var carName = $('#carName').val();
@@ -76,6 +77,7 @@ function addOrder(){
     fd.append('Id', Id);
     fd.append('userName', userName);
     fd.append('location', location);
+    fd.append('address', address);
     fd.append('pickDate', pickDate);
     fd.append('returnDate', returnDate);
     fd.append('carName', carName);
@@ -108,75 +110,36 @@ let brand = document.querySelector("#brand");
 let heading = document.querySelector(".cars .head");
 let container = document.querySelector(".cars-container");
 
-<?php
-    session_start();
-
-    if(isset($_SESSION["name"]))
-    {
-        echo `window.onload = function car() {
-            let http = new XMLHttpRequest();
-            heading.classList.add("hide");
-            http.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    let response = JSON.parse(this.responseText);
-                    let out = "";
-                    container.innerHTML = "";
-                    for(let item of response)
-                    {
-                        out += `
-                            <div class="box ${item.category}">
-                                <div class="box-image">
-                                    <img src='${item.path}' alt="">
-                                </div>
-                                <div class="right">
-                                <h3 class="name">${item.brand} ${item.name}</h3>
-                                <h2 class="price">&#8377;${item.price}<span>/Day</span></h2>
-                                <a href="#cars" onclick="toggle(); getinfo(${item.Id})" class="btn">Rent Now</a> 
-                                </div>
-                            </div>
-                        `;
-                    }
-                    container.innerHTML = out;
-                }
-            };
-            http.open('POST', "getdata.php", true);
-            http.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-            http.send("brand="); 
-        };`;
-    }
-    else{
-        echo `window.onload = function car() {
-            let http = new XMLHttpRequest();
-            heading.classList.add("hide");
-            http.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    let response = JSON.parse(this.responseText);
-                    let out = "";
-                    container.innerHTML = "";
-                    for(let item of response)
-                    {
-                        out += `
-                            <div class="box ${item.category}">
-                                <div class="box-image">
-                                    <img src='${item.path}' alt="">
-                                </div>
-                                <div class="right">
-                                <h3 class="name">${item.brand} ${item.name}</h3>
-                                <h2 class="price">&#8377;${item.price}<span>/Day</span></h2>
-                                <a href="login.php" class="btn">Rent Now</a> 
-                                </div>
-                            </div>
-                        `;
-                    }
-                    container.innerHTML = out;
-                }
-            };
-            http.open('POST', "getdata.php", true);
-            http.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-            http.send("brand="); 
-        };`;
-    }
-?>
+window.onload = function car() {
+    let http = new XMLHttpRequest();
+    heading.classList.add("hide");
+    http.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let response = JSON.parse(this.responseText);
+            let out = "";
+            container.innerHTML = "";
+            for(let item of response)
+            {
+                out += `
+                    <div class="box ${item.category}">
+                        <div class="box-image">
+                            <img src='${item.path}' alt="">
+                        </div>
+                        <div class="right">
+                        <h3 class="name">${item.brand} ${item.name}</h3>
+                        <h2 class="price">&#8377;${item.price}<span>/Day</span></h2>
+                        <a href="#cars" onclick="toggle(); getinfo(${item.Id})" class="btn">Rent Now</a> 
+                        </div>
+                    </div>
+                `;
+            }
+            container.innerHTML = out;
+        }
+    };
+    http.open('POST', "getdata.php", true);
+    http.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    http.send("brand="); 
+};
 
 brand.addEventListener("change", function() {
     let brandName = this.value;

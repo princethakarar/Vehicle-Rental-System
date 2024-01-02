@@ -49,7 +49,18 @@
     </div>
     <div class="input-box">
         <span>Location</span>
-        <input type="search" id="location" placeholder="Search Places" required>
+        <select id="location" required>
+            <option value="">--SELECT CITY--</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Gandhinagar">Gandhinagar</option>
+            <option value="Vadodra">Vadodra</option>
+            <option value="Rajkot">Rajkot</option>
+            <option value="Surat">Surat</option>
+        </select>
+    </div>
+    <div class="input-box">
+        <span>Address</span>
+        <input type="textarea" id="address" placeholder="Enter Address" required>
     </div>
     <div class="input-box">
         <span>Pick up Date</span>

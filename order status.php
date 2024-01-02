@@ -76,6 +76,7 @@
         <th class="text-center">Brand</th></th>
         <th class="text-center">Price</th>
         <th class="text-center">Location</th>
+        <th class="text-center">Address</th>
         <th class="text-center">PickUp Date</th>
         <th class="text-center">Return Date</th>
         <th class="text-center">Car Image</th>
@@ -109,6 +110,7 @@
           <td><?= $row2['brand'] ?></td>      
           <td><?= $row2['price'] ?></td> 
           <td><?= $row2['location'] ?></td> 
+          <td><?= $row2['address'] ?></td> 
           <td><?= $row2['pickdate'] ?></td> 
           <td><?= $row2['returndate'] ?></td> 
           <td><img height='100px' src='<?= $row2['car_img']?>'></td>
