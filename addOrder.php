@@ -17,13 +17,15 @@
     $expire_year=$_POST['expire_year'];
     $cvv=$_POST['cvv'];
 
-    $insert = mysqli_query($conn,"INSERT INTO orders
-    (username,carname,brand,price,location,pickdate,returndate,car_img)
-    VALUES('$userName','$carName','$brand',$price,'$location','$pickDate','$returnDate','$carImg')");
+    $select = mysqli_query($conn,"SELECT Id FROM user WHERE name = '$userName'");
 
-    $insert2 = mysqli_query($conn,"INSERT INTO payment_detail
-    (card_num,holder,expiration_month,expiration_year,cvv)
-    VALUES('$card_num','$card_hol','$expire_mo','$expire_year','$cvv')");
+    $n = mysqli_num_rows($select);
+
+    $row = mysqli_fetch_assoc($select);
+
+    $insert = mysqli_query($conn,"INSERT INTO orders
+    (username, user_id,carname,brand,price,location,pickdate,returndate,car_img,card_num,holder,expiration_month,expiration_year,cvv)
+    VALUES('$userName', '$row[Id]','$carName','$brand',$price,'$location','$pickDate','$returnDate','$carImg','$card_num','$card_hol','$expire_mo','$expire_year',md5($cvv))");
 
     if($insert and $insert2)
     {

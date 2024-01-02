@@ -104,7 +104,7 @@
     </div>
     <div class="input-box">
         <span>CVV</span>
-        <input type="text" id="cvv" maxlength="4" placeholder="XXXX" required>
+        <input type="password" id="cvv" maxlength="4" placeholder="XXXX" required>
     </div>
     <div style="display: flex; margin-top: 10px;">
         <input type="checkbox" style="margin-right: 5px;" required>

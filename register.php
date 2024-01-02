@@ -42,7 +42,7 @@
                     }
                     else
                     {
-                        $query = "insert into user(name, phone_number, email, licence_number, pass) values('$name','$phno','$mail','$lno','$pass')";
+                        $query = "insert into user(name, phone_number, email, licence_number, pass) values('$name','$phno','$mail','$lno',md5($pass))";
 
                         if(mysqli_query($db,$query))
                         {
