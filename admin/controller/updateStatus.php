@@ -16,8 +16,11 @@
          $update = mysqli_query($conn,"UPDATE orders SET acc_den=1 where Id=$order_id");
     }
     else if($row["acc_den"]==1){
-         $update = mysqli_query($conn,"UPDATE orders SET acc_den=0 where Id=$order_id");
+         $update = mysqli_query($conn,"UPDATE orders SET acc_den=-1 where Id=$order_id");
     }
+    else if($row["acc_den"]==-1){
+     $update = mysqli_query($conn,"UPDATE orders SET acc_den=0 where Id=$order_id");
+}
     
         
  

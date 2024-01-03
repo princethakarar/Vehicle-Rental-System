@@ -114,7 +114,14 @@
           <td><?= $row2['pickdate'] ?></td> 
           <td><?= $row2['returndate'] ?></td> 
           <td><img height='100px' src='<?= $row2['car_img']?>'></td>
-          <td><?= $row2['acc_den'] ?></td>     
+          <td><?php if($row2['acc_den'] == 0){
+             echo "<span style='font-weight: 600;'>Pending</span>";
+          }elseif($row2['acc_den'] == 1){
+            echo "<span style='color: green; font-weight: 600;'>Accepted</span>";
+          }elseif($row2['acc_den'] == -1){
+            echo "<span style='color: red; font-weight: 600;'>Declined</span>";
+          }?>
+          </td>     
           </tr>
           <?php $count = $count + 1;}
         }

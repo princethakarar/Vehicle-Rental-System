@@ -37,7 +37,7 @@ form{
     width: 270px;
     z-index: 10;
     animation-name: animation1;
-    animation-duration: 1s;
+    animation-duration: 0.75s;
     animation-delay: 0s;
     animation-timing-function: ease-in-out;
 }

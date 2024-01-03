@@ -34,12 +34,16 @@
           <td><?=$row["returndate"]?></td>
 
            <?php 
-                if($row["acc_den"]==0){
+                if($row["acc_den"]==-1){
                             
             ?>
                 <td><button class="btn btn-danger" onclick="ChangeStatus('<?=$row['Id']?>')">Declined </button></td>
             <?php
                         
+                }elseif($row["acc_den"]==0){
+            ?>
+                <td><button class="btn btn-primary" onclick="ChangeStatus('<?=$row['Id']?>')">Pending</button></td>
+            <?php
                 }else{
             ?>
                 <td><button class="btn btn-success" onclick="ChangeStatus('<?=$row['Id']?>')">Accepted</button></td>
