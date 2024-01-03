@@ -48,12 +48,18 @@ function getinfo(id){
     });
 }
 
-function toggle(id)
+function toggle()
 {
     var blur = document.getElementById('blur');
     blur.classList.toggle('active');
     var popup = document.getElementById('popup');
     popup.classList.toggle('active');
+}
+
+function sec_toggle()
+{
+    var popup2 = document.getElementById('profile_popup');
+    popup2.classList.toggle('hide');
 }
 
 function addOrder(){

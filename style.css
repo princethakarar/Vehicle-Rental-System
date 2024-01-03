@@ -127,9 +127,9 @@ header {
   transition: 0.25s;
 }
 
-.header-btn .order_sta i:hover{
+/* .header-btn .order_sta i:hover{
   color: var(--second-color);
-}
+} */
 
 .home {
   width: 100%;

@@ -33,8 +33,8 @@
                     <a href="login.php" class="sign-in">sign in</a>';
                 }
                 else{
-                    echo '<a href="order status.php" class="order_sta"><i class="bx bxs-cart"></i></a>';
-                    echo '<a href="logout.php" class="sign-in">Logout</a>';
+                    echo '<a href="order status.php" class="order_sta"><img src="images/cart1.png" height="50px"></a>';
+                    echo '<a href="profile.php" class="profile" onclick="toggle2()" style="padding-left:10px;"><i class="bx bxs-user-circle" style="font-size: 50px;"></i></a>';
                 }
             ?>
         </div>
@@ -42,8 +42,8 @@
     <section class="home" id="home">
         <div class="car">
             <div class="text">
-                <h1><span>Looking</span> for <br>rent a car</h1>
-                <p>Drive your journey with our wheels - <span>"</span>where every journey begins with seamless car Rental Experiences<span>"</span></p>
+                <h1><span>Looking</span> for <br>Car on Rent?</h1>
+                <p>Drive your journey with our wheels - <span>"</span>Where every journey begins with seamless car Rental Experiences<span>"</span></p>
             </div>
             <img src="images/cars/nexon dark.png" alt="car">
         </div>
@@ -143,7 +143,7 @@
                 <div class="rev-image">
                     <img src="images/user1.jpeg" alt="">
                 </div>
-                <h2>Abhishek Malhan</h2>
+                <h2>Nikunj Shah</h2>
                 <div class="stars">
                     <i class='bx bxs-star'></i>
                     <i class='bx bxs-star'></i>
@@ -171,7 +171,7 @@
                 <div class="rev-image">
                     <img src="images/user3.jpeg" alt="">
                 </div>
-                <h2>Anmol jaiswal</h2>
+                <h2>Rajesh Karia</h2>
                 <div class="stars">
                     <i class='bx bxs-star'></i>
                     <i class='bx bxs-star'></i>
@@ -191,22 +191,22 @@
     <section class="faq" id="faq">
         <div class="heading">
             <span>How it works ?</span>
-            <h1>Rent with 3 easy steps</h1>
+            <h1>Rent with 3 Easy Steps</h1>
         </div>
         <div class="faq-container">
             <div class="box">
                 <i class='bx bxs-map'></i>
-                <h2>Choose a location</h2>
+                <h2>Choose a Location</h2>
                 <p>Our car hubs are available in all Metro Cities. Choose your ideal pickup spot and start your journey effortlessly.</p>
             </div>
             <div class="box">
                 <i class='bx bxs-calendar-check'></i>
-                <h2>Pick up date</h2>
+                <h2>Pick Up Date</h2>
                 <p>Pick a date that suits your plans, and we'll ensure your chosen wheels are ready to roll when you are</p>
             </div>
             <div class="box">
                 <i class='bx bxs-calendar-star'></i>
-                <h2>Book a car</h2>
+                <h2>Book a Car</h2>
                 <p>Book your ride with a few simple clicks. Choose a car, set your dates, and confirm your booking.</p>
             </div>
         </div>
@@ -215,7 +215,7 @@
     <!-- newsletter -->
 
     <section class="newsletter">
-        <h2>Subscribe to newsletter</h2>
+        <h2>Subscribe to Newsletter</h2>
         <div class="box">
             <input type="text" placeholder="Enter your Email">
             <a href="#" class="btn">Subscribe</a>

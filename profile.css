@@ -1,17 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
-
 @keyframes animation1{
     from{
-        top: 0;
+        top: -35%;
     }
     to{
-        top: 7vh;
+        top: -15%;
     }
 }
 
@@ -22,61 +16,56 @@ body{
     background-image: url('images/about.png');
     background-repeat: no-repeat;
     background-position: 0 40vh;
+    background-size: contain;
     background-color: #eeeff1;
+    font-family: 'Poppins', sans-serif;
 }
 
 form{
-    display: flex;
-    justify-content: center;
-    /* min-height: 100vh; */
+    /* display: flex;
     flex-direction: column;
-}
-
-.container{
+    justify-content: center;
+    align-items: center; */
     background: transparent;
     background-color: #56567649;
+    color: white;
     backdrop-filter: blur(2px);
     position: relative;
     padding: 20px;
     border-radius: 10px;
-    top: 7vh;
+    top: -15%;
     width: 270px;
     z-index: 10;
     animation-name: animation1;
-    animation-duration: 0.75s;
+    animation-duration: 1s;
     animation-delay: 0s;
     animation-timing-function: ease-in-out;
 }
 
-input{
-    margin-bottom: 10px;
-    width: 100%;
-    border: none;
-    outline: none;
-    height: 35px;
-    padding-left: 5px;
+form p{
+    padding: 3px;
     border-radius: 5px;
+    padding-left: 5px;
+    background-color: rgba(0, 0, 0, 0.443);
 }
 
-.btn{
-    background-color: #fe5b3d;
+form .image, form .sub{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form .image img{
+    width: 100px;
+}
+
+input{
+    padding: 5px 10px;
+    font-size: 20px;
     color: white;
     font-weight: 600;
-    font-size: 20px;
-    margin-top: 25px;
-}
-
-.heading{
-    text-align: center;
-    margin-bottom: 30px;
-    text-decoration: underline;
-}
-
-.register{
-    text-align: center;
-    color: white;
-}
-
-.register a{
-    color: #fe5b3d;
+    background: #fe5b3d;
+    border: none;
+    border-radius: 5px;
 }

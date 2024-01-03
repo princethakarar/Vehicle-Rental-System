@@ -6,12 +6,12 @@
     <title>Login</title>
     <link rel="stylesheet" href="login&register.css">
 </head>
-<body>
+<body style="background-size: cover;">
     <div class="container">
         <form method="post">
         <h2 class="heading">Login</h2>
-            <input type="text" placeholder="Enter Email" name="mail">
-            <input type="password" placeholder="Enter Password" name="pass">
+            <input type="text" placeholder="Enter Email" name="mail" required>
+            <input type="password" placeholder="Enter Password" name="pass" required>
             <input type="submit" name="sb" value="Login" class="btn">
             <p class="register">Don't have account? <a href="register.php">Register</a></p>
         </form>
@@ -23,7 +23,7 @@
             $mail = $_POST['mail'];
             $pass = $_POST['pass'];
 
-            $query = mysqli_query($db,"SELECT name FROM user WHERE email = '$mail' AND pass = md5($pass)");
+            $query = mysqli_query($db,"SELECT name, email FROM user WHERE email = '$mail' AND pass = md5($pass)");
 
             $n = mysqli_num_rows($query);
 
@@ -31,7 +31,8 @@
 
             if ($n == 1) {
                 session_start();
-                $_SESSION["name"] = $row['name'];   
+                $_SESSION["name"] = $row['name'];  
+                $_SESSION["mail"] = $row['email'];    
                 header('Location: index.php');
             } else {
                 echo "<script>alert('Invalid id or password');</script>";
