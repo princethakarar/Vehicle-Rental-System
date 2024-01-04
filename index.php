@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehicle Rental System</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 </head>
 
@@ -186,7 +185,7 @@
 
     </section>
 
-    <!-- ride  -->
+    <!-- FAQ -->
 
     <section class="faq" id="faq">
         <div class="heading">
