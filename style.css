@@ -623,9 +623,52 @@ div#popup
 
 /* heights */
 
-@media screen and (max-height: 400px){
-  header {
-    padding: 0px 100px;
+@media screen and (max-height: 500px){
+  div#popup 
+  {
+    margin-top: -10px;
+  }
+}
+
+@media screen and (max-height: 425px){
+  div#popup 
+  {
+    margin-top: -40px;
+  }
+}
+
+@media screen and (max-height: 385px){
+  div#popup 
+  {
+    margin-top: -60px;
+  }
+}
+
+@media screen and (max-height: 350px){
+  div#popup 
+  {
+    margin-top: -80px;
+  }
+}
+
+@media screen and (max-height: 300px){
+  div#popup 
+  {
+    margin-top: -100px;
+  }
+}
+
+@media screen and (max-height: 250px){
+  div#popup 
+  {
+    margin-top: -120px;
+  }
+}
+
+@media screen and (max-height: 200px){
+  div#popup 
+  {
+    margin-top: -140px;
   }
 }
 
@@ -819,6 +862,11 @@ div#popup
     display: none;
   }
 
+  div#popup 
+  {
+    width: 550px;
+  }
+
   #menu-icon{
     display: initial;
   }
@@ -919,6 +967,11 @@ div#popup
     flex-direction: column;
   }
 
+  div#popup 
+  {
+    width: 500px;
+  }
+
   .categories{
     margin-left: 23%;
   }
@@ -952,6 +1005,12 @@ div#popup
   .cars-container .box .btn {
     padding: 7px;
   }
+
+  div#popup 
+  {
+    width: 430px;
+    padding: 10px 10px;
+  }
 }
 
 @media screen and (max-width: 450px){
@@ -961,17 +1020,33 @@ div#popup
   .cars-container .box .btn {
     font-size: 13px;
   }
+  div#popup 
+  {
+    width: 380px;
+  }
+  .cars-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 420px){
+  #popup .car-info{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  div#popup 
+  {
+    padding: 10px 20px;
+  }
 }
 
 @media screen and (max-width: 400px){
   .categories{
     margin-left: 7%;
   }
-}
-
-@media screen and (max-width: 380px){
-  .categories{
-    margin-left: 5%;
+  div#popup 
+  {
+    width: 340px;
   }
 }
 
@@ -984,6 +1059,11 @@ div#popup
 @media screen and (max-width: 350px) {
   header{
     padding: 6px 14px;
+  }
+
+  div#popup 
+  {
+    width: 280px;
   }
 
   .categories{
@@ -1027,8 +1107,10 @@ div#popup
     padding: 50px 4px;
     padding-left: 5vw;
   }
-
-
+  div#popup 
+  {
+    width: 230px;
+  }
 }
 
 @media screen and (max-width: 250px){
@@ -1037,6 +1119,10 @@ div#popup
   }
   .heading {
     margin-left: 20px;
+  } 
+  div#popup 
+  {
+    width: 180px;
   }
 }
 
