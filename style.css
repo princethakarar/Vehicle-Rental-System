@@ -127,6 +127,10 @@ header {
   transition: 0.25s;
 }
 
+.header-btn a i{
+  font-size: 50px;
+}
+
 /* .header-btn .order_sta i:hover{
   color: var(--second-color);
 } */
@@ -164,8 +168,9 @@ header {
 }
 
 .text h1 {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   letter-spacing: 2px;
+  line-height: 70px;
 }
 
 .text span {
@@ -327,6 +332,14 @@ div#popup
   font-size: 17px;
   font-weight: 600;
   cursor: pointer;
+}
+
+.categories select{
+  border: 1.5px solid var(--main-color);
+  border-radius: 3px;
+  color: var(--third-color);
+  font-weight: 600;
+  width: 150px;
 }
 
 .categories #buttons button::after{
@@ -594,6 +607,14 @@ div#popup
 
 /* media queries */
 
+/* heights */
+
+@media screen and (max-height: 400px){
+  header {
+    padding: 0px 100px;
+  }
+}
+
 @media screen and (max-width: 1850px) {
   .home .car{
     gap: 650px;
@@ -692,7 +713,7 @@ div#popup
 
 @media screen and (max-width: 991px) {
   header{
-    padding: 18px 40px;
+    padding: 0px 40px;
   }
   section{
     padding: 50px 40px;
@@ -707,13 +728,25 @@ div#popup
     padding-right: 0;
   }
   .text h1{
-    font-size: 2.4rem;
+    font-size: 2.3rem;
+  }
+  .text{
+    margin-top: 20px;
   }
 }
 
 @media screen and (max-width: 950px) {
   .home .car{
     gap: 50px;
+  }
+  .categories select{
+    width: 120px;
+  }
+  .categories #buttons button{
+    padding: 0 5px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
   }
 }
 
@@ -742,8 +775,16 @@ div#popup
     padding: 11px 40px;
   }
 
+  .header-btn a{
+    padding: 0;
+  }
+
   #menu-icon{
     display: initial;
+  }
+
+  .text{
+    width: 100%;
   }
 
   .text h1{
@@ -853,6 +894,14 @@ div#popup
     padding: 6px 14px;
   }
 
+  .header-btn a img{
+    height: 40px;
+  }
+
+  .header-btn a i{
+    font-size: 35px;
+  }
+
   .logo img{
     width: 65px;
     height: 45px;
@@ -874,5 +923,24 @@ div#popup
 
   .cars-container{
     grid-template-columns: repeat(auto-fit, minmax(254px, auto));
+  }
+}
+
+@media screen and (max-width: 300px){
+  section{
+    padding: 50px 4px;
+    padding-left: 5vw;
+  }
+}
+
+@media screen and (max-width: 250px){
+  section{
+    margin-left: 10vw;
+  }
+}
+
+@media screen and (max-width: 210px){
+  section{
+    margin-left: 25vw;
   }
 }

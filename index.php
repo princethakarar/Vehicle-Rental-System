@@ -34,7 +34,7 @@
                 }
                 else{
                     echo '<a href="order status.php" class="order_sta"><img src="images/cart1.png" height="50px"></a>';
-                    echo '<a href="profile.php" class="profile" onclick="toggle2()" style="padding-left:10px;"><i class="bx bxs-user-circle" style="font-size: 50px;"></i></a>';
+                    echo '<a href="profile.php" class="profile" onclick="toggle2()" style="padding-left:10px;"><i class="bx bxs-user-circle"></i></a>';
                 }
             ?>
         </div>
