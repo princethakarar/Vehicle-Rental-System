@@ -385,7 +385,7 @@ div#popup
 }
 
 .cars-container .box .box-image {
-  height: 200px;
+  height: auto;
   width: 100%;
 }
 
@@ -393,8 +393,10 @@ div#popup
   width: 100%;
   height: 100%;
   border-radius: 1rem;
-  object-fit: cover;
+  /* object-fit: cover; */
   object-position: center;
+  height: 80%;
+  object-fit: contain;
 }
 
 .cars-container .box p {
@@ -722,6 +724,16 @@ div#popup
   }
 }
 
+@media screen and (max-width: 1500px) {
+  .cars-container .box .box-image {
+    height: auto;
+  }
+  .cars-container .box .box-image img {
+    height: 80%;
+    object-fit: contain;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .home .car{
     gap: 100px;
@@ -731,13 +743,13 @@ div#popup
     width: 700px;
     padding-bottom: 20px;
   }
-  .cars-container .box .box-image {
+  /* .cars-container .box .box-image {
     height: auto;
   }
   .cars-container .box .box-image img {
     height: 80%;
     object-fit: contain;
-  }
+  } */
 }
 
 @media screen and (max-width: 1150px) {
