@@ -625,6 +625,34 @@ div#popup
 
 /* heights */
 
+@media screen and (max-height: 900px){
+  div#popup 
+  {
+    margin-top: 190px;
+  }
+}
+
+@media screen and (max-height: 800px){
+  div#popup 
+  {
+    margin-top: 135px;
+  }
+}
+
+@media screen and (max-height: 700px){
+  div#popup 
+  {
+    margin-top: 90px;
+  }
+}
+
+@media screen and (max-height: 600px){
+  div#popup 
+  {
+    margin-top: 50px;
+  }
+}
+
 @media screen and (max-height: 500px){
   div#popup 
   {
