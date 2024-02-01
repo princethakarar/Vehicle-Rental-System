@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2024 at 02:26 PM
+-- Generation Time: Feb 01, 2024 at 01:04 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -64,7 +64,7 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`Id`, `name`, `brand`, `model`, `category`, `path`, `color`, `safe`, `fuel`, `price`) VALUES
-(1, 'Alto 800', 'Maruti Suzuki', 2020, 'hatchback', 'images/cars/alto.png', 'Red', 'false', 'CNG', 2300),
+(1, 'Alto 800', 'Maruti Suzuki', 2020, 'hatchback', 'images/cars/alto.png', 'Red', 'false', 'CNG', 2000),
 (2, 'Harrier', 'Tata', 2021, 'suv', 'images/cars/harrier-dark.png', 'Black', 'true', 'diesel', 5000),
 (3, 'Verna', 'Hyundai', 2019, 'sedan', 'images/cars/verna.png', 'White', 'true', 'diesel', 4000),
 (4, 'Swift', 'Maruti Suzuki', 2018, 'hatchback', 'images/cars/swift.png', 'Red', 'false', 'petrol', 3000),
@@ -98,6 +98,7 @@ CREATE TABLE `orders` (
   `brand` varchar(50) NOT NULL,
   `price` int(10) NOT NULL,
   `location` varchar(150) NOT NULL,
+  `address` varchar(255) NOT NULL,
   `pickdate` date NOT NULL,
   `returndate` date NOT NULL,
   `car_img` varchar(50) NOT NULL,
@@ -113,10 +114,11 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`Id`, `user_id`, `username`, `carname`, `brand`, `price`, `location`, `pickdate`, `returndate`, `car_img`, `acc_den`, `card_num`, `holder`, `expiration_month`, `expiration_year`, `cvv`) VALUES
-(4, 35, 'Dhaval', 'Wagon R', 'Maruti Suzuki', 2500, 'gir', '2024-01-25', '2024-01-26', 'images/cars/wagonr.png', 0, '11111 1111 1111 1111 ', 'sdfksldkfds', 10, 2024, 'b59c67bf196a4758191e42f76670ceba'),
-(5, 36, 'Prince', 'Brezza', 'Maruti Suzuki', 59500, 'ahmedabad', '2024-01-10', '2024-01-27', 'images/cars/brezza.png', 0, '9999  9999 9999 9999 ', 'prince thakarar', 9, 2026, 'fa246d0262c3925617b0c72bb20eeb1d'),
-(6, 36, 'Prince', 'Ciaz', 'Maruti Suzuki', 4000, 'rajkot', '2024-01-10', '2024-01-11', 'images/cars/ciaz.png', 0, '3333  3333 3333 3333 ', 'prince thakarar', 8, 2023, '2be9bd7a3434f7038ca27d1918de58bd');
+INSERT INTO `orders` (`Id`, `user_id`, `username`, `carname`, `brand`, `price`, `location`, `address`, `pickdate`, `returndate`, `car_img`, `acc_den`, `card_num`, `holder`, `expiration_month`, `expiration_year`, `cvv`) VALUES
+(10, 36, 'Prince', 'Wagon R', 'Maruti Suzuki', 2500, 'Ahmedabad', 'River front', '2024-01-10', '2024-01-10', 'images/cars/wagonr.png', 1, '7777  7777 7777 7777 ', 'prince thakarar', 7, 2025, 'd79c8788088c2193f0244d8f1f36d2db'),
+(11, 36, 'Prince', 'Ciaz', 'Maruti Suzuki', 8000, 'Ahmedabad', 'xyz', '2024-01-25', '2024-01-27', 'images/cars/ciaz.png', -1, '9999  9999 9999 9999 ', 'prince thakarar', 9, 2028, 'fa246d0262c3925617b0c72bb20eeb1d'),
+(12, 35, 'Dhaval', 'Tigor', 'Tata', 7000, 'Vadodra', 'abc', '2024-01-17', '2024-01-19', 'images/cars/tigor.png', 0, '8888  8888 8888 8888 ', 'Dhaval Suchak', 10, 2028, 'cf79ae6addba60ad018347359bd144d2'),
+(13, 36, 'Prince', 'Verna', 'Hyundai', 180000, 'Rajkot', 'River front', '2024-02-14', '2024-03-30', 'images/cars/verna.png', 1, '22266666666666666666', 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjj', 11, 2029, 'fae0b27c451c728867a567e8c1bb4e53');
 
 -- --------------------------------------------------------
 
@@ -130,18 +132,16 @@ CREATE TABLE `user` (
   `phone_number` int(10) NOT NULL,
   `email` varchar(50) NOT NULL,
   `licence_number` varchar(16) NOT NULL,
-  `pass` varchar(255) NOT NULL,
-  `otp` int(5) NOT NULL,
-  `is_expired` int(1) NOT NULL
+  `pass` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`Id`, `name`, `phone_number`, `email`, `licence_number`, `pass`, `otp`, `is_expired`) VALUES
-(35, 'Dhaval', 1234567890, 'd@gmail.com', 'GJ05 12345678902', '202cb962ac59075b964b07152d234b70', 0, 0),
-(36, 'Prince', 1234567890, 'p@gmail.com', 'GJ32 12345678901', '202cb962ac59075b964b07152d234b70', 0, 0);
+INSERT INTO `user` (`Id`, `name`, `phone_number`, `email`, `licence_number`, `pass`) VALUES
+(35, 'Dhaval', 1234567890, 'd@gmail.com', 'GJ05 12345678902', '202cb962ac59075b964b07152d234b70'),
+(36, 'Prince', 1234567890, 'p@gmail.com', 'GJ32 12345678901', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
@@ -191,7 +191,7 @@ ALTER TABLE `cars`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `Id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `user`
