@@ -13,7 +13,6 @@
             <input type="text" placeholder="Enter Email" name="mail">
             <input type="password" placeholder="Enter Password" name="pass">
             <input type="submit" name="sb" value="Login" class="btn">
-            <p class="register">Don't have account? <a href="register.php">Register</a></p>
         </form>
     </div>
     <?php if (isset($_POST['sb'])) {
@@ -22,12 +21,17 @@
         if ($db) {
             $mail = $_POST['mail'];
             $pass = $_POST['pass'];
+            $_SESSION["mail"] = $_POST['mail'];
 
             $query = mysqli_query($db,"SELECT * FROM admin WHERE email = '$mail' AND pass = '$pass'");
 
             $n = mysqli_num_rows($query);
 
+            $row = mysqli_fetch_assoc($query);
+
             if ($n == 1) {
+                session_start();
+                $_SESSION["mail"] = $row['email'];     
                 header('Location: home.php');
             } else {
                 echo mysqli_error($db);

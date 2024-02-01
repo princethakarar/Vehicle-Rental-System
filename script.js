@@ -37,17 +37,6 @@ sr.reveal('.form-container form',{delay:50,origin:'left'})
 
 // function to get information of specific car
 
-function rentbutton(id){
-    $.ajax({
-        url:"rentbutton.php",
-        method:"post",
-        data:{record:id},
-        success:function(data){
-            $('#popup').html(data);
-        }
-    });
-}
-
 function getinfo(id){
     $.ajax({
         url:"getinfo.php",
@@ -145,9 +134,7 @@ window.onload = function car() {
                         <div class="right">
                         <h3 class="name">${item.brand} ${item.name}</h3>
                         <h2 class="price">&#8377;${item.price}<span>/Day</span></h2>
-                        <script>
-                            rentbutton(<?php${item.Id}?>);
-                        </script>
+                        <a href="#cars" onclick="toggle(); getinfo(${item.Id})" class="btn">Rent Now</a>
                         </div>
                     </div>
                 `;
