@@ -6,7 +6,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="../login&register.css">
 </head>
-<body>
+<body style="background-position: 43vh 60vh;">
     <div class="container">
         <form method="post">
         <h2 class="heading">Login</h2>

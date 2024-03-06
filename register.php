@@ -6,7 +6,7 @@
     <title>Register</title>
     <link rel="stylesheet" href="login&register.css">
 </head>
-<body style="background-size: contain;">
+<body style="background-size: 1000px;">
     <div class="container">
         <form method="post">
         <h2 class="heading">Register</h2>
