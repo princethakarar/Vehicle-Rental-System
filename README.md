@@ -4,7 +4,7 @@ A full-stack **Vehicle Rental System** built to simplify the process of booking 
 
 ## 🔗 Live Demo
 
-http://www.vrs.infinityfreeapp.com/?i=1
+*(If hosted, add the link here. Example: https://your-domain.com or Netlify/Vercel link)*
 ---
 
 ## 📂 Project Features
