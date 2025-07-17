@@ -56,8 +56,8 @@ A full-stack **Vehicle Rental System** built to simplify the process of booking 
 
 4. **Import the SQL file**:
    - Open http://localhost/phpmyadmin
-   - Create a new database, e.g., `vehicle_rental`
-   - Import the provided `vehicle_rental.sql` file from the project.
+   - Create a new database, e.g., `vrs`
+   - Import the provided `vrs.sql` file from the project.
 
 5. **Run the project in your browser**:
    ```
